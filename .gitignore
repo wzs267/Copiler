@@ -1,0 +1,57 @@
+# .gitignore for Copiler repository
+# Purpose: ignore compiled/build artifacts, logs, editor/OS files and common LaTeX build outputs
+
+#########################
+# Compiled objects/bin #
+#########################
+*.o
+*.obj
+*.exe
+*.out
+# common pattern: binaries without extension often used in the repo
+# ignore explicit test binaries in the homework folder
+/1.编译器了解/**/test_x86
+/1.编译器了解/**/test_arm
+
+#########################
+# Generated assembly / IR (optional)
+#########################
+# If you want to keep generated assembly/LLVM IR in the repo, comment out the next two lines
+# (they are enabled by default here because repository contains many generated .s/.ll files)
+*.s
+*.ll
+
+#########################
+# Logs / temporary files
+#########################
+*.log
+*.tmp
+*.bak
+*~
+*.swp
+
+#########################
+# LaTeX build artefacts (latex_model)
+#########################
+# keep source files like .tex and .bib, but ignore build products
+/1.编译器了解/**/latex_model/*.aux
+/1.编译器了解/**/latex_model/*.log
+/1.编译器了解/**/latex_model/*.out
+/1.编译器了解/**/latex_model/*.toc
+/1.编译器了解/**/latex_model/*.synctex.gz
+/1.编译器了解/**/latex_model/*.fdb_latexmk
+/1.编译器了解/**/latex_model/*.fls
+# PDFs and generated images (uncomment if you prefer to keep them in repo)
+
+/1.编译器了解/**/latex_model/*.png
+
+#########################
+# Editor / OS files
+#########################
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# End of file
