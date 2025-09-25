@@ -1,0 +1,469 @@
+% -*- coding: utf-8 -*-
+%-------------------------designed by zcf--------------
+\documentclass[UTF8,a4paper,10pt]{ctexart}
+\usepackage[left=3.17cm, right=3.17cm, top=2.74cm, bottom=2.74cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx,subfig}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{booktabs} %表格
+\usepackage{multirow}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  %表格强制换行
+%-------------------------字体设置--------------
+% \usepackage{times} 
+\usepackage{ctex}
+\setCJKmainfont[ItalicFont=Noto Sans CJK SC Bold, BoldFont=Noto Serif CJK SC Black]{Noto Serif CJK SC}
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}           % 一号, 1.4 倍行距
+\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}          % 二号, 1.25倍行距
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}          % 小二, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}  %三号字
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍行距
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}            % 四号, 1.5 倍行距
+\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}    % 半小四, 1.5倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}            % 小四, 1.5倍行距
+\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}       % 大五号, 单倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{15.75pt}\selectfont}    % 五号, 单倍行距
+%-------------------------章节名----------------
+\usepackage{ctexcap} 
+\CTEXsetup[name={,、},number={ \chinese{section}}]{section}
+\CTEXsetup[name={（,）},number={\chinese{subsection}}]{subsection}
+\CTEXsetup[name={,.},number={\arabic{subsubsection}}]{subsubsection}
+%-------------------------页眉页脚--------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\kaishu \leftmark}
+% \chead{}
+\rhead{\kaishu 语言处理系统的完整工作过程实验报告}%加粗\bfseries 
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.1pt}  
+\renewcommand{\footrulewidth}{0pt}%去掉横线
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}%标题横线
+\newcommand{\HRulegrossa}{\rule{\linewidth}{1.2mm}}
+%-----------------------伪代码------------------
+\usepackage{algorithm}  
+\usepackage{algorithmicx}  
+\usepackage{algpseudocode}  
+\floatname{algorithm}{Algorithm}  
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  
+\renewcommand{\algorithmicensure}{\textbf{Output:}} 
+\usepackage{lipsum}  
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+  \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+      {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+      \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+      \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+      \fi
+      \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+  \end{center}
+  }
+\makeatother
+%------------------------代码-------------------
+\usepackage{xcolor} 
+\usepackage{listings} 
+\lstset{ 
+breaklines,%自动换行
+basicstyle=\small,
+escapeinside=``,
+keywordstyle=\color{ blue!70} \bfseries,
+commentstyle=\color{red!50!green!50!blue!50},% 
+stringstyle=\ttfamily,% 
+extendedchars=false,% 
+linewidth=\textwidth,% 
+numbers=left,% 
+numberstyle=\tiny \color{blue!50},% 
+frame=trbl% 
+rulesepcolor= \color{ red!20!green!20!blue!20} 
+}
+%------------超链接----------
+\usepackage[colorlinks,linkcolor=black,anchorcolor=blue]{hyperref}
+%------------------------TODO-------------------
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+% for check symbol 
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+%------------------------水印-------------------
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+\newcommand{\watermark}[3]{\AddToShipoutPictureBG{
+\parbox[b][\paperheight]{\paperwidth}{
+\vfill%
+\centering%
+\tikz[remember picture, overlay]%
+  \node [rotate = #1, scale = #2] at (current page.center)%
+    {\textcolor{gray!80!cyan!30!magenta!30}{#3}};
+\vfill}}}
+
+
+
+%———————————————————————————————————————————正文———————————————————————————————————————————————
+%----------------------------------------------
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+    \includegraphics[width=0.8\textwidth]{NKU.png}\\[1cm]    
+    \textsc{\Huge \kaishu{\textbf{南\ \ \ \ \ \ 开\ \ \ \ \ \ 大\ \ \ \ \ \ 学}} }\\[0.9cm]
+    \textsc{\huge \kaishu{\textbf{计\ \ 算\ \ 机\ \ 学\ \ 院}}}\\[0.5cm]
+    \textsc{\Large \textbf{语言处理系统的完整工作过程实验报告}}\\[0.8cm]
+    \HRule \\[0.9cm]
+    { \LARGE \bfseries 语言处理系统探究}\\[0.4cm]
+    \HRule \\[2.0cm]
+    \centering
+    \textsc{\LARGE 杨乔钦{\ \ \ \ }  王泽舜{\ \ \ \ }}\\[0.5cm]
+    \textsc{\LARGE \kaishu{年级\ :\ 2023级}}\\[0.5cm]
+    \textsc{\LARGE \kaishu{专业\ :\ 计算机科学与技术}}\\[0.5cm]
+    \textsc{\LARGE \kaishu{指导教师\ :\ 王刚}}\\[0.5cm]
+    \vfill
+    {\Large \today}
+    \end{center}
+\end{titlepage}
+%-------------摘------要--------------
+\newpage
+\thispagestyle{empty}
+\renewcommand{\abstractname}{\kaishu \sihao \textbf{摘要}}
+    \begin{abstract}
+
+        \noindent  %顶格
+        \textbf{\\\ 关键字：Parallel}\textbf{} \\\ \\\
+    \end{abstract}
+%----------------------------------------------------------------
+\tableofcontents
+%----------------------------------------------------------------
+\newpage
+\watermark{60}{10}{NKU}
+\setcounter{page}{1}
+\section{原始SysY程序}
+我们编写了一个简单的SysY程序，功能是读取一个整数数组，计算其元素和，并根据和的大小进行不同的输出操作
+如果大于20，会输出和的两倍，如果小于等于20，会输出和除以3的余数。
+程序中包含了变量声明、数组操作、算术运算、条件判断和函数调用等基本语法结构。以下是该SysY程序的完整代码：
+\begin{lstlisting}[title=逐列访问平凡算法,frame=trbl,language={C}]
+// 全局变量和常量声明
+const int N = 5;
+int global_array[5] = {2,2,3,4,5};
+
+// SysY运行时库函数声明 - 必须添加这些声明才能调用库函数
+void putint(int);       // 输出一个整数
+void putch(int);        // 输出一个字符
+
+// 函数声明
+int calculate(int a, int b);
+
+int main() {
+
+    int sum = 0;
+    int i = 0;
+    
+    // 使用getarray从输入获取数据，替换原来的固定数组赋值
+    int count = 5;
+
+    
+    // 算术运算：计算数组元素的和
+    while (i < count) {  // 使用实际读取的元素个数
+        sum = sum + global_array[i];
+        i = i + 1;
+    }
+    
+    // 条件判断和输出
+    if (sum > 20) {
+        int result = calculate(sum, 2);
+    putint(result);  // 使用putint输出结果而不是直接return
+    putch(10);      // 输出换行符
+    } else {
+        int remainder = sum % 3;
+    putint(remainder); // 使用putint输出结果
+    putch(10);        // 输出换行符
+    }
+    
+    return 0;  // main函数返回0表示正常结束
+}
+
+// 函数定义：复杂计算
+int calculate(int a, int b) {
+    int result = 0;
+    while (b > 0) {
+        result = result + a;
+        b = b - 1;
+    }
+    return result;
+}\end{lstlisting}
+
+
+\section{arm汇编程序}
+我编写的arm汇编程序如下所示，该程序实现了与上述SysY程序相同的功能。它读取一个整数数组，计算其元素和，并根据和的大小进行不同的输出操作。如果和大于20，则输出和的两倍；如果和小于等于20，则输出和除以3的余数。程序中包含了变量声明、数组操作、算术运算、条件判断和函数调用等基本语法结构。
+以下是该arm汇编程序的完整代码：
+\begin{lstlisting}[title=逐列访问平凡算法,frame=trbl]
+	.arch armv8-a ; 指定目标架构为 AArch64
+	.file	"test.c" ; 源文件名信息
+	.text ; 文本段开始
+	.section	.text.startup,"ax",@progbits ; 启动代码段
+	.align	2 ; 对齐
+	.p2align 4,,11 ; 更高对齐
+	.global	main ; 导出 main 符号
+	.type	main, %function ; 声明 main 为函数
+main: ; main 函数入口
+.LFB0: ; 函数框架开始标签
+	.cfi_startproc ; 调试信息开始
+	adrp	x0, .LANCHOR0 ; 将 LAUNCHER 基址高位加载到 x0
+	add	x1, x0, :lo12:.LANCHOR0 ; 将基址低位加到 x0 得到完整地址放 x1
+	stp	x29, x30, [sp, -16]! ; 保存帧指针和返回地址并调整栈（push）
+	.cfi_def_cfa_offset 16 ; 调试: 定义 CFA 偏移
+	.cfi_offset 29, -16 ; 调试: x29 保存位置
+	.cfi_offset 30, -8 ; 调试: x30 保存位置
+	mov	x29, sp ; 设置帧指针 x29 = sp
+	ldp	w0, w4, [x1] ; 从内存载入两个 32-bit 值到 w0,w4
+	ldp	w3, w2, [x1, 8] ; 继续加载另外两个 32-bit 值到 w3,w2
+	add	w0, w0, w4 ; 累加 w0 和 w4
+	ldr	w1, [x1, 16] ; 载入第五个 32-bit 值到 w1
+	add	w0, w0, w3 ; 累加 w3
+	add	w0, w0, w2 ; 累加 w2
+	add	w0, w0, w1 ; 累加 w1，w0 保存元素和
+	cmp	w0, 20 ; 比较和与 20
+	ble	.L2 ; 若小于等于 20 跳到 .L2
+	lsl	w0, w0, 1 ; 否则将和乘 2（左移一位）
+	bl	putint ; 调用 putint 输出整数
+	mov	w0, 10 ; 将换行符 ASCII 10 放入 w0
+	bl	putch ; 调用 putch 输出换行
+.L3: ; 公共返回标签
+	mov	w0, 0 ; 返回值置 0
+	ldp	x29, x30, [sp], 16 ; 恢复 x29,x30 并释放栈空间
+	.cfi_remember_state ; 调试信息：记住状态
+	.cfi_restore 30 ; 恢复调试寄存器 30 信息
+	.cfi_restore 29 ; 恢复调试寄存器 29 信息
+	.cfi_def_cfa_offset 0 ; 恢复 CFA 偏移
+	ret ; 返回调用者
+.L2: ; 小于等于20的处理分支
+	.cfi_restore_state ; 恢复调试状态
+	mov	w1, 3 ; 将除数 3 放入 w1
+	sdiv	w1, w0, w1 ; w1 = w0 / 3（商）
+	add	w1, w1, w1, lsl 1 ; w1 = w1 + (w1 << 1) = 3 * 商
+	sub	w0, w0, w1 ; 计算余数 w0 = w0 - 3*商
+	bl	putint ; 输出余数
+	mov	w0, 10 ; 设置换行字符
+	bl	putch ; 输出换行
+	b	.L3 ; 跳转到公共返回
+	.cfi_endproc ; 结束调试信息
+.LFE0: ; 函数结束标签
+	.size	main, .-main ; 记录 main 大小
+	.text ; 文本段（下一个函数）
+	.align	2 ; 对齐
+	.p2align 4,,11 ; 对齐
+	.global	calculate ; 导出 calculate 符号
+	.type	calculate, %function ; 声明 calculate
+calculate: ; calculate 函数入口
+.LFB1: ; 函数框架开始
+	.cfi_startproc ; 调试开始
+	mul	w0, w1, w0 ; w0 = w0 * w1（乘法实现）
+	cmp	w1, 0 ; 比较参数 w1 与 0
+	csel	w0, w0, wzr, gt ; 若 w1>0 返回乘积，否则返回 0
+	ret ; 返回
+	.cfi_endproc ; 结束调试信息
+.LFE1: ; 结束标签
+	.size	calculate, .-calculate ; 记录大小
+	.global	global_array ; 导出全局数组
+	.global	N ; 导出常量 N
+	.section	.rodata ; 只读数据段
+	.align	2 ; 对齐
+	.type	N, %object ; 声明 N 为对象
+	.size	N, 4 ; N 的大小
+N: ; 常量 N 标签
+	.word	5 ; N = 5
+	.data ; 数据段开始
+	.align	4 ; 数据对齐
+	.set	.LANCHOR0,. + 0 ; 设置锚点符号
+	.type	global_array, %object ; 声明全局数组
+	.size	global_array, 20 ; 数组大小 20 字节
+global_array: ; 全局数组标签
+	.word	2 ; 元素 0 = 2
+	.word	2 ; 元素 1 = 2
+	.word	3 ; 元素 2 = 3
+	.word	4 ; 元素 3 = 4
+	.word	5 ; 元素 4 = 5
+	.ident	"GCC: (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0" ; 编译器标识
+	.section	.note.GNU-stack,"",@progbits ; 指示不可执行栈
+
+\end{lstlisting}
+\subsection{说明}
+\begin{itemize}
+	\item 调用约定：AArch64 使用寄存器 x0..x7 传递前八个整型/指针参数，返回值放在 x0（32-bit 时用 w0）。被调用者保存寄存器（如 x19..x28）需在函数入口保存并在返回前恢复。
+	\item 栈帧与栈保护：函数入口处通过 \texttt{sub sp, sp, \#64} 分配栈空间，编译器加入了栈保护（\texttt{\_stack\_chk\_guard} / \texttt{\_stack\_chk\_fail}）以检测栈溢出攻击。
+	\item 数组寻址：编译器使用位移指令（例如 \texttt{lsl 2}）将索引乘以 4 来计算整数元素的字节偏移，从而高效访问数组元素。
+	\item 循环与分支优化：简单的循环被编译为比较/分支形式；小的数学变换（例如将循环展开或用乘法替代循环）可能由编译器进行优化，如本例中 \texttt{calculate} 使用乘法和条件选择实现语义。
+	\item 运行时库依赖：汇编中调用的 \texttt{putint}、\texttt{putch} 等函数由运行时库（例如 \texttt{libsysy\_aarch.a}）提供。链接时必须指定对应目标架构的静态库，否则会出现未定义引用错误。
+	\item 链接建议：使用交叉链接器将汇编/目标文件与 AArch64 静态库链接，例如：
+	\begin{verbatim}
+aarch64-linux-gnu-gcc test_aarch64.s libsysy_aarch.a -o test_arm.out
+	\end{verbatim}
+	若库放在子目录则传递相对路径：\texttt{lib/..../libsysy\_aarch.a}。
+	\item 架构匹配：务必确保静态库是为目标架构（AArch64）构建的；x86 构建的库无法用于 ARM 链接。
+	\item 调试与反汇编：若需查看生成的可执行的真实指令或符号信息，可用 \texttt{objdump -d} / \texttt{readelf} / \texttt{nm} 等工具检查符号表与节信息。
+\end{itemize}
+
+\subsection{结果展示}
+我们将上述SysY程序编译为ARM汇编，并链接运行时库，成功生成了可执行文件。以下是SysY程序和arm汇编的编译成功控制台信息：
+\begin{lstlisting}[title=运行成功信息,frame=trbl]
+yqq@LAPTOP-B4JFEDK6:~/repository/Copiler/1.编译器了解$ aarch64-linux-gnu-gcc test_aarch64.s lib.tar.gz/libsysy_aarch.a -o test_arm.out
+yqq@LAPTOP-B4JFEDK6:~/repository/Copiler/1.编译器了解$ qemu-aarch64 -L /usr/aarch64-linux-gnu ./test_arm.out
+1
+TOTAL: 0H-0M-0S-0us
+\end{lstlisting}
+\begin{table}[!htbp]
+  \centering
+\begin{tabular}{ccc}
+		oprule
+	array内容 & SysY编译输出 & arm汇编编译输出 \\
+	\midrule
+	1,2,3,4,5 & 0 & 0 \\
+	2,2,3,4,5 & 1 & 1 \\
+	3,2,3,4,5 & 2 & 2 \\
+	4,2,3,4,5 & 0 & 0 \\
+	\bottomrule
+\end{tabular}
+  \caption{运行结果比较}
+\end{table}
+由此可见，SysY程序和arm汇编程序在相同输入下均能正确输出预期结果，功能实现一致。
+
+
+
+%——————————————————————————————————————
+% \subsection{第一节}
+% 如图\ref{fig:1}所示
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.3]{NKU.png}
+%     \caption{Caption}
+%     \label{fig:1}
+% \end{figure}
+
+% 表
+% \begin{table}[!htbp]
+%   \centering
+%   \begin{tabular}{ccccccccccc}
+%   \toprule  
+%   N/n$\backslash$Algo& naive-conv& naive-pool& omp-conv& omp-pool\\
+%   \midrule
+%   64/2& 0.0167& 0.01255& 0.04142& 0.03799\\
+%   64/4& 0.03599&0.0394& 0.0458& 0.0421\\
+%   \bottomrule
+%   \end{tabular}
+%   \caption{性能测试结果(4线程)(单位:ms)}
+% \end{table}
+
+% 带单元格表格
+% \begin{table}[!htbp]
+%   \centering
+%   \begin{tabular}{|c|c|c|c|c|c|c|}
+%   \hline
+%   \multicolumn{2}{|c|}{ \multirow{2}*{$Cost$} }& \multicolumn{5}{c|}{To}\\
+%   \cline{3-7}
+%   \multicolumn{2}{|c|}{}&$A$&$B$&$C$&$D$&$E$\\
+%   \hline
+%   \multirow{3}*{From}&$B$&7&0&1&3&8\\
+%   \cline{2-7}
+%   &$C$&8&1&0&2&7\\
+%   \cline{2-7}
+%   &$D$&8&3&2&0&5\\
+%   \hline
+%   \end{tabular}
+%   \caption{结点C距离向量表(无毒性逆转)}
+% \end{table}
+
+% %——————————————————————————————————————
+% \subsection{第二节}
+% 伪代码
+
+% \begin{breakablealgorithm} 
+%   \caption{初始化obj文件信息——对应MeshSimplify类中readfile函数,Face类calMatrix函数} 
+%   \begin{algorithmic}[1] %每行显示行号  
+%       \Require obj文件,顶点、边、面列表
+%       \Ensure 是否读取成功
+%       \Function {calMatrix}{$Face$}  
+%               \State $normal \gets e1×e2$  
+%               \State $normal \gets normal/normal.length$
+%               \State $temp[] \gets {normal.x, normal.y, normal.z, normal· Face.v1}$
+%               \State $Matrix[i][j]=temp[i] * temp[j]$ 
+%               \State \Return{$Matrix$}  
+%       \EndFunction
+%       \State 根据obj的v和f区分点面信息,读取并加入列表
+%       \State $scale \gets $记录点坐标中距离原点最远的分量,以便后续OpenGL进行显示
+%       \State $ori \gets $记录中心点,便于OpenGL显示在中心位置,避免有的obj偏移原点较多
+%       \State 根据三角面片信息,计算一个面的三条边
+%       \State 计算每个面的矩阵$\gets calMatrix$
+%       \State 将每个面的矩阵加到各点,由点维护\\
+%       \Return True
+%   \end{algorithmic}  
+% \end{breakablealgorithm}
+
+% 代码
+% \begin{lstlisting}[title=逐列访问平凡算法,frame=trbl,language={C++}]
+%   void ord()   
+%   {
+%       double head,tail,freq,head1,tail1,timess=0; // timers
+%       init(N);
+%       QueryPerformanceFrequency((LARGE_INTEGER *)&freq );
+%       QueryPerformanceCounter((LARGE_INTEGER *)&head);
+%       for (int i=0; i<NN; i++)
+%           for (int j=0; j<NN; j++)
+%               col_sum[i] += (b[j][i]*a[j]);
+%       QueryPerformanceCounter ((LARGE_INTEGER *)& tail) ;
+%       cout << "\nordCol:" <<(tail-head)*1000.0 / freq<< "ms" << endl;
+%   }
+% \end{lstlisting}
+
+
+% %——————————————————————————————————————
+% \subsection{第三节}
+
+% 参考文献\cite{adams1995hitchhiker}\cite{shin2016deep}
+    
+% 多行公式
+% \begin{align}
+%   a+b = a + b \\
+%   \frac{a+b}{a-b}
+% \end{align}
+
+% 行内公式：$\sum^N_{i=1}$
+
+% \textbf{超链接}  \href{http://youtube.com/}{YouTube}
+
+% 带标号枚举
+% \begin{enumerate}
+%   \item 1
+%   \item 2
+% \end{enumerate}
+
+% 不带标号枚举
+% \begin{itemize}
+%   \item 1
+%   \item 2
+% \end{itemize}
+
+% \xiaosi{切换字体大小}
+
+% %----------------------------------------------------------------
+% \section{总结}
+
+% %----------------------------------------------------------------
+\newpage
+\bibliographystyle{plain}
+\bibliography{references} 
+\end{document}

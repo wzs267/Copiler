@@ -34,16 +34,16 @@
 # LaTeX build artefacts (latex_model)
 #########################
 # keep source files like .tex and .bib, but ignore build products
-/1.编译器了解/**/latex_model/*.aux
-/1.编译器了解/**/latex_model/*.log
-/1.编译器了解/**/latex_model/*.out
-/1.编译器了解/**/latex_model/*.toc
-/1.编译器了解/**/latex_model/*.synctex.gz
-/1.编译器了解/**/latex_model/*.fdb_latexmk
-/1.编译器了解/**/latex_model/*.fls
+/1.编译器了解/**/*.aux
+/1.编译器了解/**/*.log
+/1.编译器了解/**/*.out
+/1.编译器了解/**/*.toc
+/1.编译器了解/**/*.synctex.gz
+/1.编译器了解/**/*.fdb_latexmk
+/1.编译器了解/**/*.fls
 # PDFs and generated images (uncomment if you prefer to keep them in repo)
 
-/1.编译器了解/**/latex_model/*.png
+/1.编译器了解/**/*.png
 
 #########################
 # Editor / OS files
@@ -53,5 +53,12 @@
 *.iml
 .DS_Store
 Thumbs.db
+!1.编译器了解/test_aarch64.s
+
+
+
+# ensure we can track specific files inside the ignored cooperation report folder
+
+
 
 # End of file
