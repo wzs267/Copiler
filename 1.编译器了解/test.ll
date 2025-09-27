@@ -1,93 +1,113 @@
-@N = dso_local constant i32 5, align 4
-@global_array = dso_local global [5 x i32] [i32 2, i32 2, i32 3, i32 4, i32 5], align 16
-define dso_local i32 @main() #0 {
-  %1 = alloca i32, align 4
-  %2 = alloca i32, align 4
-  %3 = alloca i32, align 4
-  %4 = alloca i32, align 4
-  %5 = alloca i32, align 4
-  %6 = alloca i32, align 4
-  store i32 0, ptr %1, align 4
-  store i32 0, ptr %2, align 4
-  store i32 0, ptr %3, align 4
-  store i32 5, ptr %4, align 4
-  br label %7
+; 目标平台信息 - 消除编译警告
+target triple = "x86_64-pc-linux-gnu"
 
-7:                                               
-  %8 = load i32, ptr %3, align 4
-  %9 = load i32, ptr %4, align 4
-  %10 = icmp slt i32 %8, %9
-  br i1 %10, label %11, label %20
+; 全局常量和数组
+@N = constant i32 5
+@global_array = global [5 x i32] [i32 2, i32 2, i32 3, i32 4, i32 5]
+; 外部函数声明
+declare void @putint(i32)
+declare void @putch(i32)
 
-11:                                             
-  %12 = load i32, ptr %2, align 4
-  %13 = load i32, ptr %3, align 4
-  %14 = sext i32 %13 to i64
-  %15 = getelementptr inbounds [5 x i32], ptr @global_array, i64 0, i64 %14
-  %16 = load i32, ptr %15, align 4
-  %17 = add nsw i32 %12, %16
-  store i32 %17, ptr %2, align 4
-  %18 = load i32, ptr %3, align 4
-  %19 = add nsw i32 %18, 1
-  store i32 %19, ptr %3, align 4
-  br label %7, !llvm.loop !6
+; main 函数
+define i32 @main() {
+entry:
+    ; 局部变量初始化
+    %sum = alloca i32
+    %i = alloca i32
+    %count = alloca i32
+    
+    store i32 0, ptr %sum        ; sum = 0
+    store i32 0, ptr %i          ; i = 0
+    store i32 5, ptr %count      ; count = 5
+    
+    br label %while_check
 
-20:                                              
-  %21 = load i32, ptr %2, align 4
-  %22 = icmp sgt i32 %21, 20
-  br i1 %22, label %23, label %27
+while_check:
+    ; 检查循环条件: i < count
+    %i_val = load i32, ptr %i
+    %count_val = load i32, ptr %count
+    %cmp = icmp slt i32 %i_val, %count_val
+    br i1 %cmp, label %while_body, label %while_end
 
-23:                                              
-  %24 = load i32, ptr %2, align 4
-  %25 = call i32 @calculate(i32 noundef %24, i32 noundef 2)
-  store i32 %25, ptr %5, align 4
-  %26 = load i32, ptr %5, align 4
-  call void @putint(i32 noundef %26)
-  call void @putch(i32 noundef 10)
-  br label %31
+while_body:
+    ; 循环体: sum = sum + global_array[i]
+    %sum_val = load i32, ptr %sum
+    %i_curr = load i32, ptr %i
+    
+    ; 计算 global_array[i] 的地址
+    %array_ptr = getelementptr [5 x i32], ptr @global_array, i32 0, i32 %i_curr
+    %array_val = load i32, ptr %array_ptr
+    
+    ; sum = sum + global_array[i]
+    %new_sum = add i32 %sum_val, %array_val
+    store i32 %new_sum, ptr %sum
+    
+    ; i = i + 1
+    %new_i = add i32 %i_curr, 1
+    store i32 %new_i, ptr %i
+    
+    br label %while_check
 
-27:                                              
-  %28 = load i32, ptr %2, align 4
-  %29 = srem i32 %28, 3
-  store i32 %29, ptr %6, align 4
-  %30 = load i32, ptr %6, align 4
-  call void @putint(i32 noundef %30)
-  call void @putch(i32 noundef 10)
-  br label %31
+while_end:
+    ; if (sum > 20)
+    %final_sum = load i32, ptr %sum
+    %if_cmp = icmp sgt i32 %final_sum, 20
+    br i1 %if_cmp, label %then_branch, label %else_branch
 
-31:                                              
-  ret i32 0
+then_branch:
+    ; int result = calculate(sum, 2);
+    %result = call i32 @calculate(i32 %final_sum, i32 2)
+    
+    ; putint(result); putch(10);
+    call void @putint(i32 %result)
+    call void @putch(i32 10)
+    br label %exit
+
+else_branch:
+    ; int remainder = sum % 3;
+    %remainder = srem i32 %final_sum, 3
+    
+    ; putint(remainder); putch(10);
+    call void @putint(i32 %remainder)
+    call void @putch(i32 10)
+    br label %exit
+
+exit:
+    ret i32 0
 }
 
-; Function Attrs: noinline nounwind optnone uwtable
-define dso_local i32 @calculate(i32 noundef %0, i32 noundef %1) #0 {
-  %3 = alloca i32, align 4
-  %4 = alloca i32, align 4
-  %5 = alloca i32, align 4
-  store i32 %0, ptr %3, align 4
-  store i32 %1, ptr %4, align 4
-  store i32 0, ptr %5, align 4
-  br label %6
+; calculate 函数
+define i32 @calculate(i32 %a, i32 %b) {
+entry:
+    ; 局部变量
+    %result = alloca i32
+    %b_local = alloca i32
+    
+    store i32 0, ptr %result     ; result = 0
+    store i32 %b, ptr %b_local   ; 保存参数 b
+    
+    br label %loop_check
 
-6:                                               
-  %7 = load i32, ptr %4, align 4
-  %8 = icmp sgt i32 %7, 0
-  br i1 %8, label %9, label %15
+loop_check:
+    ; 检查循环条件: b > 0
+    %b_val = load i32, ptr %b_local
+    %loop_cmp = icmp sgt i32 %b_val, 0
+    br i1 %loop_cmp, label %loop_body, label %loop_end
 
-9:                                               
-  %10 = load i32, ptr %5, align 4
-  %11 = load i32, ptr %3, align 4
-  %12 = add nsw i32 %10, %11
-  store i32 %12, ptr %5, align 4
-  %13 = load i32, ptr %4, align 4
-  %14 = sub nsw i32 %13, 1
-  store i32 %14, ptr %4, align 4
-  br label %6, !llvm.loop !8
+loop_body:
+    ; result = result + a
+    %result_val = load i32, ptr %result
+    %new_result = add i32 %result_val, %a
+    store i32 %new_result, ptr %result
+    
+    ; b = b - 1
+    %b_curr = load i32, ptr %b_local
+    %new_b = sub i32 %b_curr, 1
+    store i32 %new_b, ptr %b_local
+    
+    br label %loop_check
 
-15:                                             
-  %16 = load i32, ptr %5, align 4
-  ret i32 %16
+loop_end:
+    %final_result = load i32, ptr %result
+    ret i32 %final_result
 }
-
-declare void @putint(i32 noundef) #1
-declare void @putch(i32 noundef) #1
