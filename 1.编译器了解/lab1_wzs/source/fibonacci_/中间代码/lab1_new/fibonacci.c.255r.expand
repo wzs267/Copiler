@@ -1,0 +1,220 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 10 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 2 13 2 (set (reg:SI 1 dx)
+        (const_int 10 [0xa])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:DI 4 si)
+        (reg:DI 87)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)
+        (nil)))
+(insn 15 14 16 2 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(call_insn 17 16 5 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+        (nil))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 5 17 6 2 (set (reg/v:SI 83 [ i ])
+        (const_int 0 [0])) "fibonacci.c":10:12 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 84 [ a ])
+        (const_int 1 [0x1])) "fibonacci.c":6:16 -1
+     (nil))
+(insn 7 6 35 2 (set (reg/v:SI 85 [ a ])
+        (const_int 0 [0])) "fibonacci.c":6:9 -1
+     (nil))
+(code_label 35 7 18 4 4 (nil) [1 uses])
+(note 18 35 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 21 18 22 4 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg/v:SI 83 [ i ])
+            (const_int 1 [0x1]))) "fibonacci.c":11:12 -1
+     (nil))
+(jump_insn 22 21 23 4 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 45)
+            (pc))) "fibonacci.c":11:12 -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 45)
+(note 23 22 24 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 5 (parallel [
+            (set (reg/v:SI 82 [ b ])
+                (plus:SI (reg/v:SI 85 [ a ])
+                    (reg/v:SI 84 [ a ])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":14:18 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 1 dx)
+        (reg/v:SI 82 [ b ])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:DI 88)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:DI 4 si)
+        (reg:DI 88)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(insn 28 27 29 5 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(call_insn 30 29 31 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+        (nil))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 31 30 32 5 (parallel [
+            (set (reg/v:SI 83 [ i ])
+                (plus:SI (reg/v:SI 83 [ i ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":10:38 discrim 2 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/v:SI 83 [ i ])
+            (const_int 10 [0xa]))) "fibonacci.c":10:19 discrim 1 -1
+     (nil))
+(jump_insn 33 32 54 5 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) "fibonacci.c":10:19 discrim 1 -1
+     (int_list:REG_BR_PROB 122003916 (nil))
+ -> 38)
+(code_label 54 33 34 6 5 (nil) [1 uses])
+(note 34 54 3 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 3 34 4 6 (set (reg/v:SI 85 [ a ])
+        (reg/v:SI 84 [ a ])) "fibonacci.c":5:12 -1
+     (nil))
+(insn 4 3 36 6 (set (reg/v:SI 84 [ a ])
+        (reg/v:SI 82 [ b ])) "fibonacci.c":5:12 -1
+     (nil))
+(jump_insn 36 4 37 6 (set (pc)
+        (label_ref 35)) -1
+     (nil)
+ -> 35)
+(barrier 37 36 38)
+(code_label 38 37 39 7 3 (nil) [1 uses])
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 7 (set (reg:SI 5 di)
+        (const_int 10 [0xa])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(call_insn 41 40 42 7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7892cf52fd00 __builtin_putchar>) [0 __builtin_putchar S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7892cf52fd00 __builtin_putchar>)
+        (nil))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 42 41 43 7 (set (reg:SI 86 [ <retval> ])
+        (const_int 0 [0])) "fibonacci.c":22:1 -1
+     (nil))
+(jump_insn 43 42 44 7 (set (pc)
+        (label_ref 57)) "fibonacci.c":22:1 -1
+     (nil)
+ -> 57)
+(barrier 44 43 45)
+(code_label 45 44 46 8 2 (nil) [1 uses])
+(note 46 45 47 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 48 8 (set (reg:SI 1 dx)
+        (reg/v:SI 83 [ i ])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 48 47 49 8 (set (reg:DI 90)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 49 48 50 8 (set (reg:DI 4 si)
+        (reg:DI 90)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(insn 50 49 51 8 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(insn 51 50 52 8 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (nil))
+(call_insn 52 51 53 8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+        (nil))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 53 52 8 8 (parallel [
+            (set (reg/v:SI 83 [ i ])
+                (plus:SI (reg/v:SI 83 [ i ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":10:38 discrim 2 -1
+     (nil))
+(insn 8 53 9 8 (set (reg/v:SI 82 [ b ])
+        (reg/v:SI 84 [ a ])) "fibonacci.c":10:38 discrim 2 -1
+     (nil))
+(insn 9 8 55 8 (set (reg/v:SI 84 [ a ])
+        (reg/v:SI 85 [ a ])) "fibonacci.c":10:38 discrim 2 -1
+     (nil))
+(jump_insn 55 9 56 8 (set (pc)
+        (label_ref 54)) "fibonacci.c":10:38 discrim 2 -1
+     (nil)
+ -> 54)
+(barrier 56 55 57)
+(code_label 57 56 60 9 1 (nil) [1 uses])
+(note 60 57 58 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 58 60 59 9 (set (reg/i:SI 0 ax)
+        (reg:SI 86 [ <retval> ])) "fibonacci.c":22:1 -1
+     (nil))
+(insn 59 58 0 9 (use (reg/i:SI 0 ax)) "fibonacci.c":22:1 -1
+     (nil))

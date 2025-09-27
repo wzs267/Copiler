@@ -1,0 +1,308 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=1743, cgraph_uid=16, symbol_order=15)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__fmt = &PARM_NOALIAS(9)
+PARM_NOALIAS(9) = &NONLOCAL
+callescape(11) = NONLOCAL
+CALLUSED(12) = callescape(11)
+callarg(14) = &NONLOCAL
+callarg(14) = callarg(14) + UNKNOWN
+callarg(14) = *callarg(14) + UNKNOWN
+CALLUSED(12) = callarg(14)
+*callarg(14) = callescape(11)
+CALLCLOBBERED(13) = callarg(14)
+callescape(11) = callarg(14)
+ESCAPED = &NONLOCAL
+callarg(15) = __fmt
+callarg(15) = callarg(15) + UNKNOWN
+callarg(15) = *callarg(15) + UNKNOWN
+CALLUSED(12) = callarg(15)
+*callarg(15) = callescape(11)
+CALLCLOBBERED(13) = callarg(15)
+callescape(11) = callarg(15)
+ESCAPED = __fmt
+_4 = NONLOCAL
+_4 = callarg(14)
+_4 = callarg(15)
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+Solving graph
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+NONLOCAL = { ESCAPED NONLOCAL }
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+PARM_NOALIAS(9) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+__fmt = { PARM_NOALIAS(9) }
+__printf_chk = { }
+callescape(11) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLUSED(12) = { ESCAPED NONLOCAL PARM_NOALIAS(9) } same as callescape(11)
+CALLCLOBBERED(13) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+callarg(14) = { ESCAPED NONLOCAL }
+callarg(15) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+_4 = { ESCAPED NONLOCAL PARM_NOALIAS(9) } same as callescape(11)
+printf = { }
+
+
+Alias information for printf
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { D.3395 } (nonlocal, escaped, restrict)
+
+Flow-insensitive points-to information
+
+__fmt_2(D), points-to vars: { D.3395 } (nonlocal, escaped, restrict)
+
+__attribute__((artificial, gnu_inline, always_inline))
+__attribute__((nonnull (1), format (printf, 1, 2)))
+int printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> :
+  _4 = __printf_chk (2, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+callescape(9) = NONLOCAL
+CALLUSED(10) = callescape(9)
+callarg(12) = &NONLOCAL
+callarg(12) = callarg(12) + UNKNOWN
+callarg(12) = *callarg(12) + UNKNOWN
+CALLUSED(10) = callarg(12)
+*callarg(12) = callescape(9)
+CALLCLOBBERED(11) = callarg(12)
+callescape(9) = callarg(12)
+ESCAPED = &NONLOCAL
+callarg(13) = &STRING
+callarg(13) = callarg(13) + UNKNOWN
+callarg(13) = *callarg(13) + UNKNOWN
+CALLUSED(10) = callarg(13)
+*callarg(13) = callescape(9)
+CALLCLOBBERED(11) = callarg(13)
+callescape(9) = callarg(13)
+ESCAPED = &STRING
+callarg(14) = &NONLOCAL
+callarg(14) = callarg(14) + UNKNOWN
+callarg(14) = *callarg(14) + UNKNOWN
+CALLUSED(10) = callarg(14)
+*callarg(14) = callescape(9)
+CALLCLOBBERED(11) = callarg(14)
+callescape(9) = callarg(14)
+ESCAPED = &NONLOCAL
+_21 = NONLOCAL
+_21 = callarg(12)
+_21 = callarg(13)
+_21 = callarg(14)
+next_15 = a_2 + UNKNOWN
+next_15 = b_4 + UNKNOWN
+a_1 = a_2
+a_1 = b_4
+b_3 = b_4
+b_3 = next_15
+next_5 = i_6
+next_5 = next_15
+callescape(23) = NONLOCAL
+CALLUSED(24) = callescape(23)
+callarg(26) = &NONLOCAL
+callarg(26) = callarg(26) + UNKNOWN
+callarg(26) = *callarg(26) + UNKNOWN
+CALLUSED(24) = callarg(26)
+*callarg(26) = callescape(23)
+CALLCLOBBERED(25) = callarg(26)
+callescape(23) = callarg(26)
+ESCAPED = &NONLOCAL
+callarg(27) = &STRING
+callarg(27) = callarg(27) + UNKNOWN
+callarg(27) = *callarg(27) + UNKNOWN
+CALLUSED(24) = callarg(27)
+*callarg(27) = callescape(23)
+CALLCLOBBERED(25) = callarg(27)
+callescape(23) = callarg(27)
+ESCAPED = &STRING
+callarg(28) = next_5
+callarg(28) = callarg(28) + UNKNOWN
+callarg(28) = *callarg(28) + UNKNOWN
+CALLUSED(24) = callarg(28)
+*callarg(28) = callescape(23)
+CALLCLOBBERED(25) = callarg(28)
+callescape(23) = callarg(28)
+ESCAPED = next_5
+_22 = NONLOCAL
+_22 = callarg(26)
+_22 = callarg(27)
+_22 = callarg(28)
+i_20 = i_6 + UNKNOWN
+i_20 = &NONLOCAL
+a_2 = &NULL
+a_2 = a_1
+b_4 = &NONLOCAL
+b_4 = b_3
+i_6 = &NULL
+i_6 = i_20
+callescape(31) = NONLOCAL
+CALLUSED(32) = callescape(31)
+callarg(34) = &NONLOCAL
+callarg(34) = callarg(34) + UNKNOWN
+callarg(34) = *callarg(34) + UNKNOWN
+CALLUSED(32) = callarg(34)
+*callarg(34) = callescape(31)
+CALLCLOBBERED(33) = callarg(34)
+callescape(31) = callarg(34)
+ESCAPED = &NONLOCAL
+callarg(35) = &STRING
+callarg(35) = callarg(35) + UNKNOWN
+callarg(35) = *callarg(35) + UNKNOWN
+CALLUSED(32) = callarg(35)
+*callarg(35) = callescape(31)
+CALLCLOBBERED(33) = callarg(35)
+callescape(31) = callarg(35)
+ESCAPED = &STRING
+_23 = NONLOCAL
+_23 = callarg(34)
+_23 = callarg(35)
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+Solving graph
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL }
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__printf_chk = { }
+callescape(9) = { STRING ESCAPED NONLOCAL }
+CALLUSED(10) = { STRING ESCAPED NONLOCAL } same as callescape(9)
+CALLCLOBBERED(11) = { STRING ESCAPED NONLOCAL }
+callarg(12) = { ESCAPED NONLOCAL }
+callarg(13) = { STRING }
+callarg(14) = { ESCAPED NONLOCAL }
+_21 = { STRING ESCAPED NONLOCAL } same as callescape(9)
+next_15 = { NULL NONLOCAL }
+a_2 = { NULL NONLOCAL }
+b_4 = { NULL NONLOCAL }
+a_1 = { NULL NONLOCAL } same as a_2
+b_3 = { NULL NONLOCAL } same as b_4
+next_5 = { NULL NONLOCAL }
+i_6 = { NULL NONLOCAL }
+callescape(23) = { NULL STRING ESCAPED NONLOCAL }
+CALLUSED(24) = { NULL STRING ESCAPED NONLOCAL } same as callescape(23)
+CALLCLOBBERED(25) = { NULL STRING ESCAPED NONLOCAL }
+callarg(26) = { ESCAPED NONLOCAL }
+callarg(27) = { STRING }
+callarg(28) = { NULL ESCAPED NONLOCAL }
+_22 = { NULL STRING ESCAPED NONLOCAL } same as callescape(23)
+i_20 = { NULL NONLOCAL }
+callescape(31) = { STRING ESCAPED NONLOCAL }
+CALLUSED(32) = { STRING ESCAPED NONLOCAL } same as callescape(31)
+CALLCLOBBERED(33) = { STRING ESCAPED NONLOCAL }
+callarg(34) = { ESCAPED NONLOCAL }
+callarg(35) = { STRING }
+_23 = { STRING ESCAPED NONLOCAL } same as callescape(31)
+main = { }
+
+
+Alias information for main
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { }
+
+Flow-insensitive points-to information
+
+
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+  int _21;
+  int _22;
+  int _23;
+
+  <bb 2> :
+  _21 = __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (i_6 <= 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  next_15 = a_2 + b_4;
+
+  <bb 5> :
+  # a_1 = PHI <a_2(3), b_4(4)>
+  # b_3 = PHI <b_4(3), next_15(4)>
+  # next_5 = PHI <i_6(3), next_15(4)>
+  _22 = __printf_chk (2, "%d ", next_5);
+  i_20 = i_6 + 1;
+
+  <bb 6> :
+  # a_2 = PHI <0(2), a_1(5)>
+  # b_4 = PHI <1(2), b_3(5)>
+  # i_6 = PHI <0(2), i_20(5)>
+  if (i_6 <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _23 = __printf_chk (2, "\n");
+  return 0;
+
+}
+
+

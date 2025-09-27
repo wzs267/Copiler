@@ -1,0 +1,458 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+Starting decreasing number of live ranges...
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue: n_basic_blocks 9 n_edges 10 count 12 (  1.3)
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8
+;;
+;; Loop 1
+;;  header 3, latch 5
+;;  depth 1, outer 0
+;;  nodes: 3 5 4 7
+;; 2 succs { 3 }
+;; 3 succs { 7 4 }
+;; 4 succs { 5 6 }
+;; 5 succs { 3 }
+;; 6 succs { 8 }
+;; 7 succs { 5 }
+;; 8 succs { 1 }
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+Reg 87 uninteresting
+Reg 91 uninteresting (no unique first use)
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8
+;;
+;; Loop 1
+;;  header 3, latch 5
+;;  depth 1, outer 0
+;;  nodes: 3 5 4 7
+;; 2 succs { 3 }
+;; 3 succs { 7 4 }
+;; 4 succs { 5 6 }
+;; 5 succs { 3 }
+;; 6 succs { 8 }
+;; 7 succs { 5 }
+;; 8 succs { 1 }
+Building IRA IR
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+init_insns for 87: (insn_list:REG_DEP_TRUE 13 (nil))
+init_insns for 91: (insn_list:REG_DEP_TRUE 64 (nil))
+
+Pass 0 for finding pseudo/allocno costs
+
+    a8 (r91,l1) best GENERAL_REGS, allocno GENERAL_REGS
+    a0 (r91,l0) best GENERAL_REGS, allocno GENERAL_REGS
+    a4 (r87,l0) best SIREG, allocno SIREG
+    a7 (r85,l1) best GENERAL_REGS, allocno GENERAL_REGS
+    a1 (r85,l0) best GENERAL_REGS, allocno GENERAL_REGS
+    a6 (r84,l1) best GENERAL_REGS, allocno GENERAL_REGS
+    a2 (r84,l0) best GENERAL_REGS, allocno GENERAL_REGS
+    a5 (r83,l1) best GENERAL_REGS, allocno GENERAL_REGS
+    a3 (r83,l0) best GENERAL_REGS, allocno GENERAL_REGS
+    a9 (r82,l1) best GENERAL_REGS, allocno GENERAL_REGS
+
+  a0(r91,l0) costs: AREG:0,1816 DREG:0,1816 CREG:0,1816 BREG:0,1816 SIREG:0,1816 DIREG:0,1816 AD_REGS:0,1816 CLOBBERED_REGS:0,1816 Q_REGS:0,1816 NON_Q_REGS:0,1816 TLS_GOTBASE_REGS:0,1816 GENERAL_REGS:0,1816 SSE_FIRST_REG:540,5988 NO_REX_SSE_REGS:540,5988 SSE_REGS:540,5988 MMX_REGS:900,12704 INT_SSE_REGS:900,12704 ALL_REGS:9360,201856 MEM:450,5898
+  a1(r85,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 TLS_GOTBASE_REGS:0,0 GENERAL_REGS:0,0 SSE_FIRST_REG:180,6556 NO_REX_SSE_REGS:180,6556 SSE_REGS:180,6556 MMX_REGS:540,16395 INT_SSE_REGS:540,16395 ALL_REGS:9000,264186 MEM:90,5094
+  a2(r84,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 TLS_GOTBASE_REGS:0,0 GENERAL_REGS:0,0 SSE_FIRST_REG:540,8930 NO_REX_SSE_REGS:540,8930 SSE_REGS:540,8930 MMX_REGS:540,24089 INT_SSE_REGS:540,24089 ALL_REGS:9000,366538 MEM:90,8480
+  a3(r83,l0) costs: AREG:0,362 DREG:0,362 CREG:0,362 BREG:0,362 SIREG:0,362 DIREG:0,362 AD_REGS:0,362 CLOBBERED_REGS:0,362 Q_REGS:0,362 NON_Q_REGS:0,362 TLS_GOTBASE_REGS:0,362 GENERAL_REGS:0,362 SSE_FIRST_REG:180,21978 NO_REX_SSE_REGS:180,21978 SSE_REGS:180,21978 MMX_REGS:540,47769 INT_SSE_REGS:540,47769 ALL_REGS:9000,779196 MEM:90,18436
+  a4(r87,l0) costs: AREG:180,180 DREG:180,180 CREG:180,180 BREG:180,180 SIREG:-90,-90 DIREG:180,180 AD_REGS:180,180 CLOBBERED_REGS:180,180 Q_REGS:180,180 NON_Q_REGS:180,180 TLS_GOTBASE_REGS:180,180 GENERAL_REGS:180,180 SSE_FIRST_REG:1080,1080 NO_REX_SSE_REGS:1080,1080 SSE_REGS:1080,1080 MMX_REGS:2070,2070 INT_SSE_REGS:2070,2070 ALL_REGS:28440,28440 MEM:990,990
+  a5(r83,l1) costs: AREG:362,362 DREG:362,362 CREG:362,362 BREG:362,362 SIREG:362,362 DIREG:362,362 AD_REGS:362,362 CLOBBERED_REGS:362,362 Q_REGS:362,362 NON_Q_REGS:362,362 TLS_GOTBASE_REGS:362,362 GENERAL_REGS:362,362 SSE_FIRST_REG:21798,21798 NO_REX_SSE_REGS:21798,21798 SSE_REGS:21798,21798 MMX_REGS:47229,47229 INT_SSE_REGS:47229,47229 ALL_REGS:770196,770196 MEM:18346,18346
+  a6(r84,l1) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 TLS_GOTBASE_REGS:0,0 GENERAL_REGS:0,0 SSE_FIRST_REG:8390,8390 NO_REX_SSE_REGS:8390,8390 SSE_REGS:8390,8390 MMX_REGS:23549,23549 INT_SSE_REGS:23549,23549 ALL_REGS:357538,357538 MEM:8390,8390
+  a7(r85,l1) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 TLS_GOTBASE_REGS:0,0 GENERAL_REGS:0,0 SSE_FIRST_REG:6376,6376 NO_REX_SSE_REGS:6376,6376 SSE_REGS:6376,6376 MMX_REGS:15855,15855 INT_SSE_REGS:15855,15855 ALL_REGS:255186,255186 MEM:5004,5004
+  a8(r91,l1) costs: AREG:1816,1816 DREG:1816,1816 CREG:1816,1816 BREG:1816,1816 SIREG:1816,1816 DIREG:1816,1816 AD_REGS:1816,1816 CLOBBERED_REGS:1816,1816 Q_REGS:1816,1816 NON_Q_REGS:1816,1816 TLS_GOTBASE_REGS:1816,1816 GENERAL_REGS:1816,1816 SSE_FIRST_REG:5448,5448 NO_REX_SSE_REGS:5448,5448 SSE_REGS:5448,5448 MMX_REGS:11804,11804 INT_SSE_REGS:11804,11804 ALL_REGS:192496,192496 MEM:5448,5448
+  a9(r82,l1) costs: AREG:1454,1454 DREG:1454,1454 CREG:1454,1454 BREG:1454,1454 SIREG:1454,1454 DIREG:1454,1454 AD_REGS:1454,1454 CLOBBERED_REGS:1454,1454 Q_REGS:1454,1454 NON_Q_REGS:1454,1454 TLS_GOTBASE_REGS:1454,1454 GENERAL_REGS:1454,1454 SSE_FIRST_REG:10738,10738 NO_REX_SSE_REGS:10738,10738 SSE_REGS:10738,10738 MMX_REGS:26596,26596 INT_SSE_REGS:26596,26596 ALL_REGS:410600,410600 MEM:10656,10656
+
+
+Pass 1 for finding pseudo/allocno costs
+
+    r91: preferred GENERAL_REGS, alternative NO_REGS, allocno GENERAL_REGS
+    r87: preferred SIREG, alternative GENERAL_REGS, allocno GENERAL_REGS
+    r85: preferred GENERAL_REGS, alternative NO_REGS, allocno GENERAL_REGS
+    r84: preferred GENERAL_REGS, alternative NO_REGS, allocno GENERAL_REGS
+    r83: preferred GENERAL_REGS, alternative NO_REGS, allocno GENERAL_REGS
+    r82: preferred GENERAL_REGS, alternative NO_REGS, allocno GENERAL_REGS
+
+  a0(r91,l0) costs: GENERAL_REGS:0,1816 SSE_FIRST_REG:540,5988 NO_REX_SSE_REGS:540,5988 SSE_REGS:540,5988 MMX_REGS:1170,12974 INT_SSE_REGS:1170,12974 ALL_REGS:9900,202396 MEM:540,5988
+  a1(r85,l0) costs: GENERAL_REGS:0,0 SSE_FIRST_REG:540,10944 NO_REX_SSE_REGS:540,10944 SSE_REGS:540,10944 MMX_REGS:1080,22796 INT_SSE_REGS:1080,22796 ALL_REGS:9540,271854 MEM:540,10036
+  a2(r84,l0) costs: GENERAL_REGS:0,0 SSE_FIRST_REG:540,16986 NO_REX_SSE_REGS:540,16986 SSE_REGS:540,16986 MMX_REGS:1080,35706 INT_SSE_REGS:1080,35706 ALL_REGS:9540,385204 MEM:540,15979
+  a3(r83,l0) costs: GENERAL_REGS:0,362 SSE_FIRST_REG:540,22338 NO_REX_SSE_REGS:540,22338 SSE_REGS:540,22338 MMX_REGS:1080,48309 INT_SSE_REGS:1080,48309 ALL_REGS:9540,779736 MEM:540,18886
+  a4(r87,l0) costs: AREG:180,180 DREG:180,180 CREG:180,180 BREG:180,180 SIREG:180,-90 DIREG:180,180 AD_REGS:180,180 CLOBBERED_REGS:180,180 Q_REGS:180,180 NON_Q_REGS:180,180 TLS_GOTBASE_REGS:180,180 GENERAL_REGS:180,180 SSE_FIRST_REG:1080,1080 NO_REX_SSE_REGS:1080,1080 SSE_REGS:1080,1080 MMX_REGS:2340,2340 INT_SSE_REGS:2340,2340 ALL_REGS:28980,28980 MEM:1080,1080
+  a5(r83,l1) costs: GENERAL_REGS:362,362 SSE_FIRST_REG:21798,21798 NO_REX_SSE_REGS:21798,21798 SSE_REGS:21798,21798 MMX_REGS:47229,47229 INT_SSE_REGS:47229,47229 ALL_REGS:770196,770196 MEM:18346,18346
+  a6(r84,l1) costs: GENERAL_REGS:0,0 SSE_FIRST_REG:16446,16446 NO_REX_SSE_REGS:16446,16446 SSE_REGS:16446,16446 MMX_REGS:34626,34626 INT_SSE_REGS:34626,34626 ALL_REGS:375664,375664 MEM:15439,15439
+  a7(r85,l1) costs: GENERAL_REGS:0,0 SSE_FIRST_REG:10404,10404 NO_REX_SSE_REGS:10404,10404 SSE_REGS:10404,10404 MMX_REGS:21716,21716 INT_SSE_REGS:21716,21716 ALL_REGS:262314,262314 MEM:9496,9496
+  a8(r91,l1) costs: GENERAL_REGS:1816,1816 SSE_FIRST_REG:5448,5448 NO_REX_SSE_REGS:5448,5448 SSE_REGS:5448,5448 MMX_REGS:11804,11804 INT_SSE_REGS:11804,11804 ALL_REGS:192496,192496 MEM:5448,5448
+  a9(r82,l1) costs: GENERAL_REGS:1454,1454 SSE_FIRST_REG:14766,14766 NO_REX_SSE_REGS:14766,14766 SSE_REGS:14766,14766 MMX_REGS:31812,31812 INT_SSE_REGS:31812,31812 ALL_REGS:421598,421598 MEM:13213,13213
+
+   Insn 59(l0): point = 0
+   Insn 58(l0): point = 2
+   Insn 68(l0): point = 5
+   Insn 41(l0): point = 7
+   Insn 40(l0): point = 9
+   Insn 64(l0): point = 12
+   Insn 7(l0): point = 14
+   Insn 6(l0): point = 16
+   Insn 5(l0): point = 18
+   Insn 17(l0): point = 20
+   Insn 16(l0): point = 22
+   Insn 15(l0): point = 24
+   Insn 14(l0): point = 26
+   Insn 13(l0): point = 28
+   Insn 12(l0): point = 30
+   Insn 22(l1): point = 33
+   Insn 21(l1): point = 35
+   Insn 65(l1): point = 38
+   Insn 4(l1): point = 40
+   Insn 3(l1): point = 42
+   Insn 33(l1): point = 45
+   Insn 32(l1): point = 47
+   Insn 31(l1): point = 49
+   Insn 30(l1): point = 51
+   Insn 29(l1): point = 53
+   Insn 28(l1): point = 55
+   Insn 27(l1): point = 57
+   Insn 25(l1): point = 59
+   Insn 24(l1): point = 61
+   Insn 70(l1): point = 64
+   Insn 9(l1): point = 66
+   Insn 8(l1): point = 68
+   Insn 53(l1): point = 70
+   Insn 52(l1): point = 72
+   Insn 51(l1): point = 74
+   Insn 50(l1): point = 76
+   Insn 49(l1): point = 78
+   Insn 47(l1): point = 80
+ a0(r91): [12..12]
+ a1(r85): [12..14]
+ a2(r84): [12..16]
+ a3(r83): [12..18]
+ a4(r87): [27..28]
+ a5(r83): [33..82]
+ a6(r84): [69..82] [43..66] [33..40]
+ a7(r85): [67..82] [62..63] [33..42]
+ a8(r91): [33..82]
+ a9(r82): [64..68] [41..61]
+      Moving ranges of a8r91 to a0r91:  [33..82]
+      Moving ranges of a7r85 to a1r85:  [67..82] [62..63] [33..42]
+      Moving ranges of a6r84 to a2r84:  [69..82] [43..66] [33..40]
+      Moving ranges of a5r83 to a3r83:  [33..82]
+ Rebuilding regno allocno list for 82
+Compressing live ranges: from 83 to 18 - 21%
+Ranges after the compression:
+ a0(r91): [4..17] [0..0]
+ a1(r85): [14..17] [10..11] [4..7] [0..1]
+ a2(r84): [16..17] [8..13] [4..5] [0..1]
+ a3(r83): [4..17] [0..1]
+ a4(r87): [2..3]
+ a9(r82): [12..15] [6..9]
++++Allocating 48 bytes for conflict table (uncompressed size 80)
+;; a0(r91,l0) conflicts: a1(r85,l0) a2(r84,l0) a3(r83,l0) a9(r82,l0)
+;;     total conflict hard regs: 0-1 5
+;;     conflict hard regs: 0-1 5
+
+;; a1(r85,l0) conflicts: a0(r91,l0) a2(r84,l0) a3(r83,l0) a9(r82,l0)
+;;     total conflict hard regs: 0-1 4-5
+;;     conflict hard regs: 0-1 4-5
+
+;; a2(r84,l0) conflicts: a0(r91,l0) a1(r85,l0) a3(r83,l0) a9(r82,l0)
+;;     total conflict hard regs: 0-1 4-5
+;;     conflict hard regs: 0-1 4-5
+
+;; a3(r83,l0) conflicts: a0(r91,l0) a1(r85,l0) a2(r84,l0) a9(r82,l0)
+;;     total conflict hard regs: 0-1 4-5
+;;     conflict hard regs: 0-1 4-5
+
+;; a4(r87,l0) conflicts:
+;;     total conflict hard regs: 1
+;;     conflict hard regs: 1
+
+;; a9(r82,l0) conflicts: a0(r91,l0) a1(r85,l0) a2(r84,l0) a3(r83,l0)
+;;     total conflict hard regs: 0 4-5
+;;     conflict hard regs: 0 4-5
+
+
+  pref0:a4(r87)<-hr4@135
+  regions=2, blocks=9, points=18
+    allocnos=10 (big 0), copies=0, conflicts=0, ranges=15
+
+**** Allocnos coloring:
+
+
+  Loop 0 (parent -1, header bb2, depth 0)
+    bbs: 8 6 7 5 4 3 2
+    all: 0r91 1r85 2r84 3r83 4r87 9r82
+    modified regnos: 82 83 84 85 87 91
+    border:
+    Pressure: GENERAL_REGS=8
+    Hard reg set forest:
+      0:( 0-6 8-15 20-51)@0
+        1:( 1-3 6 36-43)@23518
+          2:( 2-3 6 36-43)@90248
+            3:( 3 6 40-43)@8344
+      Allocno a0r91 of GENERAL_REGS(15) has 6 avail. regs  3 6 40-43, node:  3 6 40-43 (confl regs =  0-1 5 7-35 44-75)
+      Allocno a1r85 of GENERAL_REGS(15) has 11 avail. regs  2-3 6 36-43, node:  2-3 6 36-43 (confl regs =  0-1 4-5 7-35 44-75)
+      Allocno a2r84 of GENERAL_REGS(15) has 11 avail. regs  2-3 6 36-43, node:  2-3 6 36-43 (confl regs =  0-1 4-5 7-35 44-75)
+      Allocno a3r83 of GENERAL_REGS(15) has 11 avail. regs  2-3 6 36-43, node:  2-3 6 36-43 (confl regs =  0-1 4-5 7-35 44-75)
+      Allocno a4r87 of GENERAL_REGS(15) has 14 avail. regs  0 2-6 36-43, ^node:  0-6 8-15 20-51 (confl regs =  1 7-35 44-75)
+      Allocno a9r82 of GENERAL_REGS(15) has 12 avail. regs  1-3 6 36-43, node:  1-3 6 36-43 (confl regs =  0 4-5 7-35 44-75)
+      Forming thread from colorable bucket:
+      Pushing a4(r87,l0)(cost 0)
+      Pushing a0(r91,l0)(cost 0)
+      Pushing a1(r85,l0)(cost 0)
+      Pushing a9(r82,l0)(cost 0)
+      Pushing a2(r84,l0)(cost 0)
+      Pushing a3(r83,l0)(cost 0)
+      Popping a3(r83,l0)  --         assign reg 3
+      Popping a2(r84,l0)  --         assign reg 6
+      Popping a9(r82,l0)  --         assign reg 40
+      Popping a1(r85,l0)  --         assign reg 41
+      Popping a0(r91,l0)  --         assign reg 42
+      Popping a4(r87,l0)  --         assign reg 4
+Disposition:
+    9:r82  l0    40    3:r83  l0     3    2:r84  l0     6    1:r85  l0    41
+    4:r87  l0     4    0:r91  l0    42
+New iteration of spill/restore move
++++Costs: overall 3542, reg 3542, mem 0, ld 0, st 0, move 0
++++       move loops 0, new jumps 0
+
+
+main
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7]
+;;  hardware regs used 	 7 [sp] 16 [argp] 19 [frame]
+;;  regular block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 16 [argp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 4 [si] 5 [di] 7 [sp] 17 [flags]
+;;  ref usage 	r0={9d,5u} r1={8d,3u} r2={5d} r4={8d,3u} r5={9d,4u} r6={1d,8u} r7={1d,12u} r8={4d} r9={4d} r10={4d} r11={4d} r12={4d} r13={4d} r14={4d} r15={4d} r16={1d,7u} r17={9d,2u} r18={4d} r19={1d,8u} r20={5d} r21={5d} r22={5d} r23={5d} r24={5d} r25={5d} r26={5d} r27={5d} r28={4d} r29={4d} r30={4d} r31={4d} r32={4d} r33={4d} r34={4d} r35={4d} r36={5d} r37={5d} r38={4d} r39={4d} r44={4d} r45={4d} r46={4d} r47={4d} r48={4d} r49={4d} r50={4d} r51={4d} r52={4d} r53={4d} r54={4d} r55={4d} r56={4d} r57={4d} r58={4d} r59={4d} r60={4d} r61={4d} r62={4d} r63={4d} r64={4d} r65={4d} r66={4d} r67={4d} r68={4d} r69={4d} r70={4d} r71={4d} r72={4d} r73={4d} r74={4d} r75={4d} r82={2d,2u} r83={3d,5u} r84={3d,3u} r85={2d,2u} r87={1d,1u} r91={1d,2u} 
+;;    total ref usage 385{318d,67u,0e} in 38{34 regular + 4 call} insns.
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 10 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 2 13 2 (set (reg:SI 1 dx)
+        (const_int 10 [0xa])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg/f:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_EQUIV (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)
+        (nil)))
+(insn 14 13 15 2 (set (reg:DI 4 si)
+        (reg/f:DI 87)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 87)
+        (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)
+            (nil))))
+(insn 15 14 16 2 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 85 {*movqi_internal}
+     (nil))
+(call_insn 17 16 5 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:SI 1 dx)
+                (expr_list:REG_UNUSED (reg:SI 0 ax)
+                    (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+                        (nil))))))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 5 17 6 2 (set (reg/v:SI 83 [ i ])
+        (const_int 0 [0])) "fibonacci.c":10:12 83 {*movsi_internal}
+     (expr_list:REG_EQUAL (const_int 0 [0])
+        (nil)))
+(insn 6 5 7 2 (set (reg/v:SI 84 [ a ])
+        (const_int 1 [0x1])) "fibonacci.c":6:16 83 {*movsi_internal}
+     (expr_list:REG_EQUAL (const_int 1 [0x1])
+        (nil)))
+(insn 7 6 64 2 (set (reg/v:SI 85 [ a ])
+        (const_int 0 [0])) "fibonacci.c":6:9 83 {*movsi_internal}
+     (expr_list:REG_EQUAL (const_int 0 [0])
+        (nil)))
+(insn 64 7 35 2 (set (reg/f:DI 91)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)) 82 {*movdi_internal}
+     (expr_list:REG_EQUIV (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(code_label 35 64 18 3 4 (nil) [1 uses])
+(note 18 35 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 21 18 22 3 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg/v:SI 83 [ i ])
+            (const_int 1 [0x1]))) "fibonacci.c":11:12 11 {*cmpsi_1}
+     (nil))
+(jump_insn 22 21 23 3 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 45)
+            (pc))) "fibonacci.c":11:12 995 {*jcc}
+     (expr_list:REG_DEAD (reg:CCGC 17 flags)
+        (int_list:REG_BR_PROB 214748372 (nil)))
+ -> 45)
+(note 23 22 24 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 4 (parallel [
+            (set (reg/v:SI 82 [ b ])
+                (plus:SI (reg/v:SI 85 [ a ])
+                    (reg/v:SI 84 [ a ])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":14:18 246 {*addsi_1}
+     (expr_list:REG_DEAD (reg/v:SI 85 [ a ])
+        (expr_list:REG_UNUSED (reg:CC 17 flags)
+            (nil))))
+(insn 25 24 27 4 (set (reg:SI 1 dx)
+        (reg/v:SI 82 [ b ])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 27 25 28 4 (set (reg:DI 4 si)
+        (reg/f:DI 91)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(insn 28 27 29 4 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 29 28 30 4 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 85 {*movqi_internal}
+     (nil))
+(call_insn 30 29 31 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:SI 1 dx)
+                (expr_list:REG_UNUSED (reg:SI 0 ax)
+                    (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+                        (nil))))))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 31 30 32 4 (parallel [
+            (set (reg/v:SI 83 [ i ])
+                (plus:SI (reg/v:SI 83 [ i ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":10:38 discrim 2 246 {*addsi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 32 31 33 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/v:SI 83 [ i ])
+            (const_int 10 [0xa]))) "fibonacci.c":10:19 discrim 1 11 {*cmpsi_1}
+     (nil))
+(jump_insn 33 32 54 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) "fibonacci.c":10:19 discrim 1 995 {*jcc}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (int_list:REG_BR_PROB 122003916 (nil)))
+ -> 38)
+(code_label 54 33 34 5 5 (nil) [1 uses])
+(note 34 54 3 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 3 34 4 5 (set (reg/v:SI 85 [ a ])
+        (reg/v:SI 84 [ a ])) "fibonacci.c":5:12 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 84 [ a ])
+        (nil)))
+(insn 4 3 65 5 (set (reg/v:SI 84 [ a ])
+        (reg/v:SI 82 [ b ])) "fibonacci.c":5:12 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 82 [ b ])
+        (nil)))
+(jump_insn 65 4 66 5 (set (pc)
+        (label_ref 35)) 996 {jump}
+     (nil)
+ -> 35)
+(barrier 66 65 38)
+(code_label 38 66 39 6 3 (nil) [1 uses])
+(note 39 38 40 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 6 (set (reg:SI 5 di)
+        (const_int 10 [0xa])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(call_insn 41 40 68 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7892cf52fd00 __builtin_putchar>) [0 __builtin_putchar S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_UNUSED (reg:SI 0 ax)
+            (expr_list:REG_CALL_DECL (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7892cf52fd00 __builtin_putchar>)
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(jump_insn 68 41 69 6 (set (pc)
+        (label_ref 67)) 996 {jump}
+     (nil)
+ -> 67)
+(barrier 69 68 45)
+(code_label 45 69 46 7 2 (nil) [1 uses])
+(note 46 45 47 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 49 7 (set (reg:SI 1 dx)
+        (reg/v:SI 83 [ i ])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 49 47 50 7 (set (reg:DI 4 si)
+        (reg/f:DI 91)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(insn 50 49 51 7 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 51 50 52 7 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 85 {*movqi_internal}
+     (nil))
+(call_insn 52 51 53 7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:SI 1 dx)
+                (expr_list:REG_UNUSED (reg:SI 0 ax)
+                    (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+                        (nil))))))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 53 52 8 7 (parallel [
+            (set (reg/v:SI 83 [ i ])
+                (plus:SI (reg/v:SI 83 [ i ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":10:38 discrim 2 246 {*addsi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 8 53 9 7 (set (reg/v:SI 82 [ b ])
+        (reg/v:SI 84 [ a ])) "fibonacci.c":10:38 discrim 2 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 84 [ a ])
+        (nil)))
+(insn 9 8 70 7 (set (reg/v:SI 84 [ a ])
+        (reg/v:SI 85 [ a ])) "fibonacci.c":10:38 discrim 2 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 85 [ a ])
+        (nil)))
+(jump_insn 70 9 71 7 (set (pc)
+        (label_ref 54)) 996 {jump}
+     (nil)
+ -> 54)
+(barrier 71 70 67)
+(code_label 67 71 60 8 6 (nil) [1 uses])
+(note 60 67 58 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 58 60 59 8 (set (reg/i:SI 0 ax)
+        (const_int 0 [0])) "fibonacci.c":22:1 83 {*movsi_internal}
+     (nil))
+(insn 59 58 0 8 (use (reg/i:SI 0 ax)) "fibonacci.c":22:1 -1
+     (nil))

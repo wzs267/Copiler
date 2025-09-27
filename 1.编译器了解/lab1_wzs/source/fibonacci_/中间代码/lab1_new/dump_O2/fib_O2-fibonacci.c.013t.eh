@@ -1,0 +1,57 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23)
+
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+  int D.3389;
+
+  a = 0;
+  b = 1;
+  printf ("Fibonacci Series up to %d terms:\n", 10);
+  i = 0;
+  goto <D.3384>;
+  <D.3383>:
+  if (i <= 1) goto <D.3386>; else goto <D.3387>;
+  <D.3386>:
+  next = i;
+  goto <D.3388>;
+  <D.3387>:
+  next = a + b;
+  a = b;
+  b = next;
+  <D.3388>:
+  printf ("%d ", next);
+  i = i + 1;
+  <D.3384>:
+  if (i <= 9) goto <D.3383>; else goto <D.3381>;
+  <D.3381>:
+  printf ("\n");
+  D.3389 = 0;
+  goto <D.3390>;
+  D.3389 = 0;
+  goto <D.3390>;
+  <D.3390>:
+  return D.3389;
+}
+
+
+
+;; Function printf (<unset-asm-name>, funcdef_no=15, decl_uid=1743, cgraph_uid=16, symbol_order=15)
+
+__attribute__((artificial, gnu_inline, always_inline))
+__attribute__((nonnull (1), format (printf, 1, 2)))
+int printf (const char * restrict __fmt)
+{
+  int D.3391;
+
+  D.3391 = __printf_chk (2, __fmt, __builtin_va_arg_pack ());
+  goto <D.3392>;
+  <D.3392>:
+  return D.3391;
+}
+
+

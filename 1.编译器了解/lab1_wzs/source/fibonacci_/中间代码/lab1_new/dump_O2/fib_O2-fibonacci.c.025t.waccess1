@@ -1,0 +1,91 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=1743, cgraph_uid=16, symbol_order=15)
+
+pointer_query counters:
+  index cache size:   0
+  index entries:      0
+  access cache size:  0
+  access entries:     0
+  hits:               0
+  misses:             0
+  failures:           0
+  max_depth:          0
+__attribute__((artificial, gnu_inline, always_inline))
+__attribute__((nonnull (1), format (printf, 1, 2)))
+int printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> :
+  _4 = __printf_chk (2, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23)
+
+pointer_query counters:
+  index cache size:   0
+  index entries:      0
+  access cache size:  0
+  access entries:     0
+  hits:               0
+  misses:             0
+  failures:           0
+  max_depth:          0
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+  int _14;
+
+  <bb 2> :
+  a_8 = 0;
+  b_9 = 1;
+  printf ("Fibonacci Series up to %d terms:\n", 10);
+  i_12 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  if (i_6 <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  next_18 = i_6;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  next_15 = a_2 + b_4;
+  a_16 = b_4;
+  b_17 = next_15;
+
+  <bb 6> :
+  # a_1 = PHI <a_2(4), a_16(5)>
+  # b_3 = PHI <b_4(4), b_17(5)>
+  # next_5 = PHI <next_18(4), next_15(5)>
+  printf ("%d ", next_5);
+  i_20 = i_6 + 1;
+
+  <bb 7> :
+  # a_2 = PHI <a_8(2), a_1(6)>
+  # b_4 = PHI <b_9(2), b_3(6)>
+  # i_6 = PHI <i_12(2), i_20(6)>
+  if (i_6 <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  printf ("\n");
+  _14 = 0;
+  return _14;
+
+}
+
+

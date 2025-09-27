@@ -1,0 +1,81 @@
+
+;; Function main (main, funcdef_no=0, decl_uid=3174, cgraph_uid=1, symbol_order=0)
+
+
+Analyzing function body size: main/0
+
+IPA function summary for main/0
+  global time:     43.000000
+  self size:       17
+  global size:     17
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:7.000000, time:8.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+  calls:
+    __builtin_putchar/2 function body not available
+      freq:1.00 loop depth: 0 size: 2 time: 11
+    printf/1 function body not available
+      freq:1.00 loop depth: 1 size: 3 time: 12
+    printf/1 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+  int D.3188;
+  int _14;
+
+  <bb 2> :
+  a_8 = 0;
+  b_9 = 1;
+  printf ("Fibonacci Series up to %d terms:\n", 10);
+  i_12 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  if (i_6 <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  next_18 = i_6;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  next_15 = a_2 + b_4;
+  a_16 = b_4;
+  b_17 = next_15;
+
+  <bb 6> :
+  # a_1 = PHI <a_2(4), a_16(5)>
+  # b_3 = PHI <b_4(4), b_17(5)>
+  # next_5 = PHI <next_18(4), next_15(5)>
+  printf ("%d ", next_5);
+  i_20 = i_6 + 1;
+
+  <bb 7> :
+  # a_2 = PHI <a_8(2), a_1(6)>
+  # b_4 = PHI <b_9(2), b_3(6)>
+  # i_6 = PHI <i_12(2), i_20(6)>
+  if (i_6 <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  __builtin_putchar (10);
+  _14 = 0;
+
+  <bb 9> :
+<L6>:
+  return _14;
+
+}
+
+

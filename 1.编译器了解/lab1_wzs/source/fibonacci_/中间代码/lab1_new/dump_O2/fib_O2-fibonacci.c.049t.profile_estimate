@@ -1,0 +1,107 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=1743, cgraph_uid=16, symbol_order=15)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+Predictions for bb 2
+1 edges in bb 2 predicted to even probabilities
+__attribute__((artificial, gnu_inline, always_inline))
+__attribute__((nonnull (1), format (printf, 1, 2)))
+int printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [local count: 1073741824]:
+  _4 = __printf_chk (2, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23)
+
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7
+;;
+;; Loop 1
+;;  header 6, latch 5
+;;  depth 1, outer 0
+;;  nodes: 6 5 3 4
+;; 2 succs { 6 }
+;; 3 succs { 5 4 }
+;; 4 succs { 5 }
+;; 5 succs { 6 }
+;; 6 succs { 3 7 }
+;; 7 succs { 1 }
+Predictions for bb 2
+1 edges in bb 2 predicted to even probabilities
+Predictions for bb 3
+  first match heuristics: 20.00%
+  combined heuristics: 20.00%
+  opcode values positive (on trees) heuristics of edge 3->5 (ignored): 41.00%
+  loop iv compare heuristics of edge 3->5: 20.00%
+Predictions for bb 4
+1 edges in bb 4 predicted to even probabilities
+Predictions for bb 5
+1 edges in bb 5 predicted to even probabilities
+Predictions for bb 6
+  first match heuristics: 90.91%
+  combined heuristics: 90.91%
+  opcode values nonequal (on trees) heuristics of edge 6->3 (ignored): 66.00%
+  loop iterations heuristics of edge 6->7: 9.09%
+Predictions for bb 7
+1 edges in bb 7 predicted to even probabilities
+cyclic probability of bb 6 is 0.909100; turning freq 1.000000 to 11.001101
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+
+  <bb 2> [local count: 97603128]:
+  __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+  goto <bb 6>; [100.00%]
+
+  <bb 3> [local count: 976138697]:
+  if (i_6 <= 1)
+    goto <bb 5>; [20.00%]
+  else
+    goto <bb 4>; [80.00%]
+
+  <bb 4> [local count: 780910955]:
+  next_15 = a_2 + b_4;
+
+  <bb 5> [local count: 976138697]:
+  # a_1 = PHI <a_2(3), b_4(4)>
+  # b_3 = PHI <b_4(3), next_15(4)>
+  # next_5 = PHI <i_6(3), next_15(4)>
+  __printf_chk (2, "%d ", next_5);
+  i_20 = i_6 + 1;
+
+  <bb 6> [local count: 1073741824]:
+  # a_2 = PHI <0(2), a_1(5)>
+  # b_4 = PHI <1(2), b_3(5)>
+  # i_6 = PHI <0(2), i_20(5)>
+  if (i_6 != 10)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 7>; [9.09%]
+
+  <bb 7> [local count: 97603128]:
+  __printf_chk (2, "\n");
+  return 0;
+
+}
+
+

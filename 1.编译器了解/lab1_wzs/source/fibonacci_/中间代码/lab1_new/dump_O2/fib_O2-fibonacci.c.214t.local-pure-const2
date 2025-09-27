@@ -1,0 +1,67 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+
+
+ local analysis of main/23
+   scanning: __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+  scanning: if (i_20 <= 1)
+  scanning: next_9 = a_18 + b_19;
+  scanning: __printf_chk (2, "%d ", next_9);
+  scanning: i_10 = i_20 + 1;
+  scanning: if (i_10 != 10)
+  scanning: __builtin_putchar (10);
+Introduced new external node (__builtin_putchar/27).
+  scanning: return 0;
+  scanning: __printf_chk (2, "%d ", i_20);
+  scanning: i_2 = i_20 + 1;
+Function is locally looping.
+Function can locally free.
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+
+  <bb 2> [local count: 97603128]:
+  __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+
+  <bb 3> [local count: 976138697]:
+  # a_18 = PHI <a_17(5), 0(2)>
+  # b_19 = PHI <b_14(5), 1(2)>
+  # i_20 = PHI <i_15(5), 0(2)>
+  if (i_20 <= 1)
+    goto <bb 7>; [20.00%]
+  else
+    goto <bb 4>; [80.00%]
+
+  <bb 4> [local count: 780910955]:
+  next_9 = a_18 + b_19;
+  __printf_chk (2, "%d ", next_9);
+  i_10 = i_20 + 1;
+  if (i_10 != 10)
+    goto <bb 8>; [88.64%]
+  else
+    goto <bb 6>; [11.36%]
+
+  <bb 8> [local count: 692179950]:
+
+  <bb 5> [local count: 887407693]:
+  # a_17 = PHI <b_19(8), a_18(7)>
+  # b_14 = PHI <next_9(8), b_19(7)>
+  # i_15 = PHI <i_10(8), i_2(7)>
+  goto <bb 3>; [100.00%]
+
+  <bb 6> [local count: 97603128]:
+  __builtin_putchar (10);
+  return 0;
+
+  <bb 7> [local count: 195227742]:
+  __printf_chk (2, "%d ", i_20);
+  i_2 = i_20 + 1;
+  goto <bb 5>; [100.00%]
+
+}
+
+

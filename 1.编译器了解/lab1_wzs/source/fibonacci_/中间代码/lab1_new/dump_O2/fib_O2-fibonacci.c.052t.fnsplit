@@ -1,0 +1,64 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=1743, cgraph_uid=16, symbol_order=15)
+
+Not splitting: disregarding inline limits.
+__attribute__((artificial, gnu_inline, always_inline))
+__attribute__((nonnull (1), format (printf, 1, 2)))
+int printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [local count: 1073741824]:
+  _4 = __printf_chk (2, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+Not splitting: main function.
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+
+  <bb 2> [local count: 97603128]:
+  __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+  goto <bb 6>; [100.00%]
+
+  <bb 3> [local count: 976138697]:
+  if (i_6 <= 1)
+    goto <bb 5>; [20.00%]
+  else
+    goto <bb 4>; [80.00%]
+
+  <bb 4> [local count: 780910955]:
+  next_15 = a_2 + b_4;
+
+  <bb 5> [local count: 976138697]:
+  # a_1 = PHI <a_2(3), b_4(4)>
+  # b_3 = PHI <b_4(3), next_15(4)>
+  # next_5 = PHI <i_6(3), next_15(4)>
+  __printf_chk (2, "%d ", next_5);
+  i_20 = i_6 + 1;
+
+  <bb 6> [local count: 1073741824]:
+  # a_2 = PHI <0(2), a_1(5)>
+  # b_4 = PHI <1(2), b_3(5)>
+  # i_6 = PHI <0(2), i_20(5)>
+  if (i_6 != 10)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 7>; [9.09%]
+
+  <bb 7> [local count: 97603128]:
+  __printf_chk (2, "\n");
+  return 0;
+
+}
+
+

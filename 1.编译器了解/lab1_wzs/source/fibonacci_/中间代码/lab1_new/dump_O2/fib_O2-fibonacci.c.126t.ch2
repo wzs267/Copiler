@@ -1,0 +1,82 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7
+;;
+;; Loop 1
+;;  header 6, latch 5
+;;  depth 1, outer 0
+;;  nodes: 6 5 3 4
+;; 2 succs { 6 }
+;; 3 succs { 5 4 }
+;; 4 succs { 5 }
+;; 5 succs { 6 }
+;; 6 succs { 3 7 }
+;; 7 succs { 1 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+a_14 -> { a_2 }
+b_15 -> { b_4 }
+i_16 -> { i_6 }
+.MEM_17 -> { .MEM_7 }
+a_18 -> { a_2 }
+b_19 -> { b_4 }
+i_20 -> { i_6 }
+.MEM_21 -> { .MEM_7 }
+.MEM_22 -> { .MEM_7 }
+Incremental SSA update started at block: 8
+Number of blocks in CFG: 11
+Number of blocks to update: 8 ( 73%)
+
+
+Merging blocks 2 and 8
+Merging blocks 5 and 6
+Removing basic block 9
+Removing basic block 10
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+
+  <bb 2> [local count: 97603128]:
+  __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+
+  <bb 3> [local count: 976138697]:
+  # a_18 = PHI <a_1(5), 0(2)>
+  # b_19 = PHI <b_3(5), 1(2)>
+  # i_20 = PHI <i_10(5), 0(2)>
+  if (i_20 <= 1)
+    goto <bb 5>; [20.00%]
+  else
+    goto <bb 4>; [80.00%]
+
+  <bb 4> [local count: 780910955]:
+  next_9 = a_18 + b_19;
+
+  <bb 5> [local count: 976138697]:
+  # a_1 = PHI <a_18(3), b_19(4)>
+  # b_3 = PHI <b_19(3), next_9(4)>
+  # next_5 = PHI <i_20(3), next_9(4)>
+  __printf_chk (2, "%d ", next_5);
+  i_10 = i_20 + 1;
+  if (i_10 != 10)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 6>; [9.09%]
+
+  <bb 6> [local count: 97603128]:
+  __builtin_putchar (10);
+  return 0;
+
+}
+
+

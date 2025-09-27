@@ -1,0 +1,39 @@
+
+;; Function main (null)
+;; enabled by -tree-original
+
+
+{
+  int a = 0;
+  int b = 1;
+  int next;
+  int i;
+
+    int a = 0;
+    int b = 1;
+    int next;
+    int i;
+  printf ((const char * restrict) "Fibonacci Series up to %d terms:\n", 10);
+  i = 0;
+  goto <D.3183>;
+  <D.3182>:;
+  if (i <= 1)
+    {
+      next = i;
+    }
+  else
+    {
+      next = a + b;
+      a = b;
+      b = next;
+    }
+  printf ((const char * restrict) "%d ", next);
+  i++ ;
+  <D.3183>:;
+  if (i <= 9) goto <D.3182>; else goto <D.3180>;
+  <D.3180>:;
+  printf ((const char * restrict) "\n");
+  return 0;
+}
+return 0;
+

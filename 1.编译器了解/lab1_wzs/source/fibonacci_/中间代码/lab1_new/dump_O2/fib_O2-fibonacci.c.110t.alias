@@ -1,0 +1,192 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+callescape(9) = NONLOCAL
+CALLUSED(10) = callescape(9)
+callarg(12) = &NONLOCAL
+callarg(12) = callarg(12) + UNKNOWN
+callarg(12) = *callarg(12) + UNKNOWN
+CALLUSED(10) = callarg(12)
+*callarg(12) = callescape(9)
+CALLCLOBBERED(11) = callarg(12)
+callescape(9) = callarg(12)
+ESCAPED = &NONLOCAL
+callarg(13) = &STRING
+callarg(13) = callarg(13) + UNKNOWN
+callarg(13) = *callarg(13) + UNKNOWN
+CALLUSED(10) = callarg(13)
+*callarg(13) = callescape(9)
+CALLCLOBBERED(11) = callarg(13)
+callescape(9) = callarg(13)
+ESCAPED = &STRING
+callarg(14) = &NONLOCAL
+callarg(14) = callarg(14) + UNKNOWN
+callarg(14) = *callarg(14) + UNKNOWN
+CALLUSED(10) = callarg(14)
+*callarg(14) = callescape(9)
+CALLCLOBBERED(11) = callarg(14)
+callescape(9) = callarg(14)
+ESCAPED = &NONLOCAL
+next_9 = a_2 + UNKNOWN
+next_9 = b_4 + UNKNOWN
+a_1 = a_2
+a_1 = b_4
+b_3 = b_4
+b_3 = next_9
+next_5 = i_6
+next_5 = next_9
+callescape(22) = NONLOCAL
+CALLUSED(23) = callescape(22)
+callarg(25) = &NONLOCAL
+callarg(25) = callarg(25) + UNKNOWN
+callarg(25) = *callarg(25) + UNKNOWN
+CALLUSED(23) = callarg(25)
+*callarg(25) = callescape(22)
+CALLCLOBBERED(24) = callarg(25)
+callescape(22) = callarg(25)
+ESCAPED = &NONLOCAL
+callarg(26) = &STRING
+callarg(26) = callarg(26) + UNKNOWN
+callarg(26) = *callarg(26) + UNKNOWN
+CALLUSED(23) = callarg(26)
+*callarg(26) = callescape(22)
+CALLCLOBBERED(24) = callarg(26)
+callescape(22) = callarg(26)
+ESCAPED = &STRING
+callarg(27) = next_5
+callarg(27) = callarg(27) + UNKNOWN
+callarg(27) = *callarg(27) + UNKNOWN
+CALLUSED(23) = callarg(27)
+*callarg(27) = callescape(22)
+CALLCLOBBERED(24) = callarg(27)
+callescape(22) = callarg(27)
+ESCAPED = next_5
+i_10 = i_6 + UNKNOWN
+i_10 = &NONLOCAL
+a_2 = &NULL
+a_2 = a_1
+b_4 = &NONLOCAL
+b_4 = b_3
+i_6 = &NULL
+i_6 = i_10
+callescape(30) = NONLOCAL
+CALLUSED(31) = callescape(30)
+callarg(33) = &NONLOCAL
+callarg(33) = callarg(33) + UNKNOWN
+callarg(33) = *callarg(33) + UNKNOWN
+CALLUSED(31) = callarg(33)
+*callarg(33) = callescape(30)
+CALLCLOBBERED(32) = callarg(33)
+callescape(30) = callarg(33)
+ESCAPED = &NONLOCAL
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+Solving graph
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL }
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__printf_chk = { }
+callescape(9) = { STRING ESCAPED NONLOCAL }
+CALLUSED(10) = { STRING ESCAPED NONLOCAL } same as callescape(9)
+CALLCLOBBERED(11) = { STRING ESCAPED NONLOCAL }
+callarg(12) = { ESCAPED NONLOCAL }
+callarg(13) = { STRING }
+callarg(14) = { ESCAPED NONLOCAL }
+next_9 = { NULL NONLOCAL }
+a_2 = { NULL NONLOCAL }
+b_4 = { NULL NONLOCAL }
+a_1 = { NULL NONLOCAL } same as a_2
+b_3 = { NULL NONLOCAL } same as b_4
+next_5 = { NULL NONLOCAL }
+i_6 = { NULL NONLOCAL }
+callescape(22) = { NULL STRING ESCAPED NONLOCAL }
+CALLUSED(23) = { NULL STRING ESCAPED NONLOCAL } same as callescape(22)
+CALLCLOBBERED(24) = { NULL STRING ESCAPED NONLOCAL }
+callarg(25) = { ESCAPED NONLOCAL }
+callarg(26) = { STRING }
+callarg(27) = { NULL ESCAPED NONLOCAL }
+i_10 = { NULL NONLOCAL }
+putchar = { }
+callescape(30) = { ESCAPED NONLOCAL }
+CALLUSED(31) = { ESCAPED NONLOCAL } same as callescape(30)
+CALLCLOBBERED(32) = { ESCAPED NONLOCAL } same as callarg(33)
+callarg(33) = { ESCAPED NONLOCAL }
+main = { }
+
+
+Alias information for main
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { }
+
+Flow-insensitive points-to information
+
+
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+
+  <bb 2> [local count: 97603128]:
+  __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+  goto <bb 6>; [100.00%]
+
+  <bb 3> [local count: 976138697]:
+  if (i_6 <= 1)
+    goto <bb 5>; [20.00%]
+  else
+    goto <bb 4>; [80.00%]
+
+  <bb 4> [local count: 780910955]:
+  next_9 = a_2 + b_4;
+
+  <bb 5> [local count: 976138697]:
+  # a_1 = PHI <a_2(3), b_4(4)>
+  # b_3 = PHI <b_4(3), next_9(4)>
+  # next_5 = PHI <i_6(3), next_9(4)>
+  __printf_chk (2, "%d ", next_5);
+  i_10 = i_6 + 1;
+
+  <bb 6> [local count: 1073741824]:
+  # a_2 = PHI <0(2), a_1(5)>
+  # b_4 = PHI <1(2), b_3(5)>
+  # i_6 = PHI <0(2), i_10(5)>
+  if (i_6 != 10)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 7>; [9.09%]
+
+  <bb 7> [local count: 97603128]:
+  __builtin_putchar (10);
+  return 0;
+
+}
+
+

@@ -1,0 +1,252 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23) (executed once)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+Expression hash table (15 buckets, 4 entries)
+Index 0 (hash value 11; max distance 0)
+  (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)
+Index 1 (hash value 11; max distance 0)
+  (plus:SI (reg/v:SI 85 [ a ])
+    (reg/v:SI 84 [ a ]))
+Index 2 (hash value 12; max distance 0)
+  (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+Index 3 (hash value 4; max distance 0)
+  (plus:SI (reg/v:SI 83 [ i ])
+    (const_int 1 [0x1]))
+
+scanning new insn with uid = 62.
+deleting insn with uid = 48.
+PRE: redundant insn 48 (expression 2) in bb 7, reaching reg is 91
+scanning new insn with uid = 63.
+deleting insn with uid = 26.
+PRE: redundant insn 26 (expression 2) in bb 4, reaching reg is 91
+PRE: edge (2,3), copy expression 2
+scanning new insn with uid = 64.
+PRE GCSE of main, 9 basic blocks, 2680 bytes needed, 2 substs, 1 insns created
+
+
+try_optimize_cfg iteration 1
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+
+
+main
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7]
+;;  hardware regs used 	 7 [sp] 16 [argp] 19 [frame]
+;;  regular block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 16 [argp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 4 [si] 5 [di] 7 [sp] 17 [flags]
+;;  ref usage 	r0={9d,5u} r1={8d,3u} r2={5d} r4={8d,3u} r5={9d,4u} r6={1d,8u} r7={1d,12u} r8={4d} r9={4d} r10={4d} r11={4d} r12={4d} r13={4d} r14={4d} r15={4d} r16={1d,7u} r17={9d,2u} r18={4d} r19={1d,8u} r20={5d} r21={5d} r22={5d} r23={5d} r24={5d} r25={5d} r26={5d} r27={5d} r28={4d} r29={4d} r30={4d} r31={4d} r32={4d} r33={4d} r34={4d} r35={4d} r36={5d} r37={5d} r38={4d} r39={4d} r44={4d} r45={4d} r46={4d} r47={4d} r48={4d} r49={4d} r50={4d} r51={4d} r52={4d} r53={4d} r54={4d} r55={4d} r56={4d} r57={4d} r58={4d} r59={4d} r60={4d} r61={4d} r62={4d} r63={4d} r64={4d} r65={4d} r66={4d} r67={4d} r68={4d} r69={4d} r70={4d} r71={4d} r72={4d} r73={4d} r74={4d} r75={4d} r82={2d,2u} r83={3d,5u} r84={3d,3u} r85={2d,2u} r87={1d,1u} r88={1d,1u} r90={1d,1u} r91={1d,2u} 
+;;    total ref usage 389{320d,69u,0e} in 37{33 regular + 4 call} insns.
+(note 10 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 10 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 2 13 2 (set (reg:SI 1 dx)
+        (const_int 10 [0xa])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg/f:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (nil))
+(insn 14 13 15 2 (set (reg:DI 4 si)
+        (reg/f:DI 87)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 87)
+        (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7892cf25fa20 *.LC0>)
+            (nil))))
+(insn 15 14 16 2 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 85 {*movqi_internal}
+     (nil))
+(call_insn 17 16 5 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:SI 1 dx)
+                (expr_list:REG_UNUSED (reg:SI 0 ax)
+                    (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+                        (nil))))))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 5 17 6 2 (set (reg/v:SI 83 [ i ])
+        (const_int 0 [0])) "fibonacci.c":10:12 83 {*movsi_internal}
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 84 [ a ])
+        (const_int 1 [0x1])) "fibonacci.c":6:16 83 {*movsi_internal}
+     (nil))
+(insn 7 6 64 2 (set (reg/v:SI 85 [ a ])
+        (const_int 0 [0])) "fibonacci.c":6:9 83 {*movsi_internal}
+     (nil))
+(insn 64 7 35 2 (set (reg/f:DI 91)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)) -1
+     (nil))
+(code_label 35 64 18 3 4 (nil) [0 uses])
+(note 18 35 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 21 18 22 3 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg/v:SI 83 [ i ])
+            (const_int 1 [0x1]))) "fibonacci.c":11:12 11 {*cmpsi_1}
+     (nil))
+(jump_insn 22 21 23 3 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 45)
+            (pc))) "fibonacci.c":11:12 995 {*jcc}
+     (expr_list:REG_DEAD (reg:CCGC 17 flags)
+        (int_list:REG_BR_PROB 214748372 (nil)))
+ -> 45)
+(note 23 22 24 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 4 (parallel [
+            (set (reg/v:SI 82 [ b ])
+                (plus:SI (reg/v:SI 85 [ a ])
+                    (reg/v:SI 84 [ a ])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":14:18 246 {*addsi_1}
+     (expr_list:REG_DEAD (reg/v:SI 85 [ a ])
+        (expr_list:REG_UNUSED (reg:CC 17 flags)
+            (nil))))
+(insn 25 24 63 4 (set (reg:SI 1 dx)
+        (reg/v:SI 82 [ b ])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 63 25 27 4 (set (reg/f:DI 88)
+        (reg/f:DI 91)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(insn 27 63 28 4 (set (reg:DI 4 si)
+        (reg/f:DI 88)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 88)
+        (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+            (nil))))
+(insn 28 27 29 4 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 29 28 30 4 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 85 {*movqi_internal}
+     (nil))
+(call_insn 30 29 31 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:SI 1 dx)
+                (expr_list:REG_UNUSED (reg:SI 0 ax)
+                    (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+                        (nil))))))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 31 30 32 4 (parallel [
+            (set (reg/v:SI 83 [ i ])
+                (plus:SI (reg/v:SI 83 [ i ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":10:38 discrim 2 246 {*addsi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 32 31 33 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/v:SI 83 [ i ])
+            (const_int 10 [0xa]))) "fibonacci.c":10:19 discrim 1 11 {*cmpsi_1}
+     (nil))
+(jump_insn 33 32 54 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) "fibonacci.c":10:19 discrim 1 995 {*jcc}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (int_list:REG_BR_PROB 122003916 (nil)))
+ -> 38)
+(code_label 54 33 34 5 5 (nil) [0 uses])
+(note 34 54 3 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 3 34 4 5 (set (reg/v:SI 85 [ a ])
+        (reg/v:SI 84 [ a ])) "fibonacci.c":5:12 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 84 [ a ])
+        (nil)))
+(insn 4 3 38 5 (set (reg/v:SI 84 [ a ])
+        (reg/v:SI 82 [ b ])) "fibonacci.c":5:12 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 82 [ b ])
+        (nil)))
+      ; pc falls through to BB 3
+(code_label 38 4 39 6 3 (nil) [1 uses])
+(note 39 38 40 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 6 (set (reg:SI 5 di)
+        (const_int 10 [0xa])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(call_insn 41 40 45 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7892cf52fd00 __builtin_putchar>) [0 __builtin_putchar S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_UNUSED (reg:SI 0 ax)
+            (expr_list:REG_CALL_DECL (symbol_ref:DI ("putchar") [flags 0x41]  <function_decl 0x7892cf52fd00 __builtin_putchar>)
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+      ; pc falls through to BB 8
+(code_label 45 41 46 7 2 (nil) [1 uses])
+(note 46 45 47 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 62 7 (set (reg:SI 1 dx)
+        (reg/v:SI 83 [ i ])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 62 47 49 7 (set (reg/f:DI 90)
+        (reg/f:DI 91)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+        (nil)))
+(insn 49 62 50 7 (set (reg:DI 4 si)
+        (reg/f:DI 90)) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 82 {*movdi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 90)
+        (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7892cf25fab0 *.LC1>)
+            (nil))))
+(insn 50 49 51 7 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 83 {*movsi_internal}
+     (nil))
+(insn 51 50 52 7 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 85 {*movqi_internal}
+     (nil))
+(call_insn 52 51 53 7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>) [0 __builtin___printf_chk S1 A8])
+            (const_int 0 [0]))) "/usr/include/x86_64-linux-gnu/bits/stdio2.h":86:10 1013 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:SI 1 dx)
+                (expr_list:REG_UNUSED (reg:SI 0 ax)
+                    (expr_list:REG_CALL_DECL (symbol_ref:DI ("__printf_chk") [flags 0x41]  <function_decl 0x7892cf559800 __printf_chk>)
+                        (nil))))))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 53 52 8 7 (parallel [
+            (set (reg/v:SI 83 [ i ])
+                (plus:SI (reg/v:SI 83 [ i ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "fibonacci.c":10:38 discrim 2 246 {*addsi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 8 53 9 7 (set (reg/v:SI 82 [ b ])
+        (reg/v:SI 84 [ a ])) "fibonacci.c":10:38 discrim 2 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 84 [ a ])
+        (nil)))
+(insn 9 8 60 7 (set (reg/v:SI 84 [ a ])
+        (reg/v:SI 85 [ a ])) "fibonacci.c":10:38 discrim 2 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 85 [ a ])
+        (nil)))
+      ; pc falls through to BB 5
+(note 60 9 58 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 58 60 59 8 (set (reg/i:SI 0 ax)
+        (const_int 0 [0])) "fibonacci.c":22:1 83 {*movsi_internal}
+     (expr_list:REG_DEAD (reg:SI 86 [ <retval> ])
+        (nil)))
+(insn 59 58 0 8 (use (reg/i:SI 0 ax)) "fibonacci.c":22:1 -1
+     (nil))

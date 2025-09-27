@@ -1,0 +1,89 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=1743, cgraph_uid=16, symbol_order=15)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+__attribute__((artificial, gnu_inline, always_inline))
+__attribute__((nonnull (1), format (printf, 1, 2)))
+int printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> :
+  _4 = __printf_chk (2, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=23, decl_uid=3375, cgraph_uid=24, symbol_order=23)
+
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7
+;;
+;; Loop 1
+;;  header 6, latch 5
+;;  depth 1, outer 0
+;;  nodes: 6 5 3 4
+;; 2 succs { 6 }
+;; 3 succs { 5 4 }
+;; 4 succs { 5 }
+;; 5 succs { 6 }
+;; 6 succs { 3 7 }
+;; 7 succs { 1 }
+int main ()
+{
+  int i;
+  int next;
+  int b;
+  int a;
+  int _21;
+  int _22;
+  int _23;
+
+  <bb 2> :
+  _21 = __printf_chk (2, "Fibonacci Series up to %d terms:\n", 10);
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (i_6 <= 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  next_15 = a_2 + b_4;
+
+  <bb 5> :
+  # a_1 = PHI <a_2(3), b_4(4)>
+  # b_3 = PHI <b_4(3), next_15(4)>
+  # next_5 = PHI <i_6(3), next_15(4)>
+  _22 = __printf_chk (2, "%d ", next_5);
+  i_20 = i_6 + 1;
+
+  <bb 6> :
+  # a_2 = PHI <0(2), a_1(5)>
+  # b_4 = PHI <1(2), b_3(5)>
+  # i_6 = PHI <0(2), i_20(5)>
+  if (i_6 <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _23 = __printf_chk (2, "\n");
+  return 0;
+
+}
+
+
